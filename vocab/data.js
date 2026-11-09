@@ -10,7 +10,7 @@ window.VOCAB = {
   meta: {
     title: "六级词汇阅读本",
     subtitle: "CET-6 Vocabulary Reader",
-    updated: "2026-11-09"
+    updated: "2026-11-10"
   },
 
   /* 领域划分：每篇短文归到一个领域，页面上可以按领域筛选 */
@@ -172,6 +172,72 @@ window.VOCAB = {
         { lemma: "contradict", pos: "v.", ipa: "/ˌkɒntrəˈdɪkt/", meaning: "反驳；与…矛盾", inText: "彼此矛盾", collocation: "contradict sb / each other；contradict itself", diff: "名词 contradiction。self-contradictory＝自相矛盾的。" },
         { lemma: "formulate", pos: "v.", ipa: "/ˈfɔːmjuleɪt/", meaning: "制定；构想；表述", inText: "制定（可达标的）目标", collocation: "formulate a policy / a theory / a plan", diff: "强调把想法成体系地表述出来。名词 formulation。" },
         { lemma: "manipulate", pos: "v.", ipa: "/məˈnɪpjuleɪt/", meaning: "操纵；操控", inText: "操纵新闻稿的措辞", collocation: "manipulate data / public opinion / sb into doing", diff: "贬义，比 handle 多了“暗中手法”的意味。名词 manipulation。" }
+      ]
+    },
+
+    {
+      id: "b02",
+      title: "The Ground Beneath the Harvest",
+      titleZh: "收成之下的土地",
+      genre: "六级科普说明文",
+      field: "science",
+      date: "2026-11-10",
+      note: "土壤退化与再生农业；六级科普、环境类常见题材，本批 24 个动词都放在同一场景里。",
+
+      paragraphs: [
+        {
+          en: "Soil is the least dramatic of natural resources and the easiest to take for granted. It forms at roughly a centimeter a century, yet it can be lost in a single careless season. Agronomists who study the chemistry that [[underlies|underlie]] fertility have warned for decades that the processes are slow and poorly mapped: the microbes that [[multiply]] in healthy ground, the fungi that bind it into crumbs, the minerals that feed a root. Where fields are worked without rest, the land continues to [[deteriorate]], and the harvests that once [[sustained|sustain]] a district begin to shrink.",
+          zh: "土壤是最不起眼的自然资源，也最容易被视作理所当然。它大约一个世纪才形成一厘米，却可能在一个粗心的季节里流失。研究**构成**肥力基础的化学过程的农学家，几十年来一直提醒：这些过程既缓慢又没摸清——在健康土壤里**繁殖**的微生物、把土粒黏成团粒的真菌、供养根系的矿物质。凡是让土地得不到休整、反复耕作的地方，土地便持续**退化**，曾经**维持**一县生计的收成也开始减少。"
+        },
+        {
+          en: "The remedies are unglamorous. Growers who [[substitute]] compost for synthetic fertilizer, [[fertilize]] less often and [[implement]] simple rotations report that tired fields [[revive]] within three seasons. Trials across the valley [[demonstrate]] that such plots [[outperform]] neighboring ones in dry years, and extension officers, once skeptical, have begun to [[endorse]] the practice. What [[propels|propel]] it is not romance but arithmetic: a grower who spends less on inputs and loses less to drought has little reason to go back.",
+          zh: "补救办法并不光鲜。用堆肥**替代**合成化肥、减少**施肥**次数、**实施**简单轮作的种植者说，疲惫的田地三个季节内就能**复苏**。谷地各处的试验**表明**，这类地块在干旱年份**表现优于**邻近地块；曾经怀疑的推广人员也开始**支持**这种做法。**推动**它的不是情怀，而是算术：投入更少、旱灾损失更小的农户，没有理由走回头路。"
+        },
+        {
+          en: "Institutions decide whether that arithmetic reaches the field. Certification bodies [[certify]] produce only after years of inspection, and only a scheme that [[compensates|compensate]] growers for the lean transitional years is likely to keep them. When governments [[withdraw]] support too early, adoption stalls within a season. The valley's cooperative [[nominated|nominate]] one grower to [[prolong]] the trial for a further five years; neighbors [[reckon]] he will be vindicated, though few would say so in public.",
+          zh: "制度决定这套算术能否落到田间。认证机构要经过多年检查才**认证**产品，而只有**补偿**种植者度过转型歉收年的方案，才可能把他们留住。政府若过早**撤回**支持，采纳率一个季度内就会停滞。谷地的合作社**提名**一位种植者把试验再**延长**五年；邻居们**认为**他终会被证明是对的，只是很少有人在公开场合这么说。"
+        },
+        {
+          en: "Advocates should be careful here. Enthusiasm sometimes [[exaggerates|exaggerate]] the gains, and satellite images, which [[illuminate]] the pattern of recovery, cannot explain why one field responds and another does not. There is no need to [[dwell]] on the chemistry to see the point: a soil is a slow account, and every harvest is a withdrawal. Some researchers have [[relocated|relocate]] their trials to drier ground; a few have [[dedicated|dedicate]] a decade to the question. What they are really testing [[transcends|transcend]] agriculture: whether any of us can be persuaded to pay now for a benefit we will not live to collect.",
+          zh: "倡导者在这里要谨慎。热情有时会**夸大**收益；能**照见**恢复格局的卫星图像，也解释不了一块地为何有反应、另一块为何没有。不必**细究**化学，道理也清楚：土壤是一本缓慢的账，每一次收成都是支取。一些研究者已把试验**迁移**到更干旱的地方，还有几位把十年**献给**了这个问题。他们真正在检验的东西**超越**了农业本身：我们是否愿意为一项自己活不到享受的收益，现在就付钱。"
+        }
+      ],
+
+      focus: [
+        "substitute A for B",
+        "outperform expectations",
+        "dwell on the details",
+        "compensate for the loss",
+        "sustain growth",
+        "withdraw support",
+        "transcend boundaries"
+      ],
+
+      words: [
+        { lemma: "revive", pos: "v.", ipa: "/rɪˈvaɪv/", meaning: "复苏；恢复生机；重新流行", inText: "疲惫的田地三个季节内复苏", collocation: "revive the land / the economy / a tradition", diff: "名词 revival。和 survive 只差一个字母：re-（再）+ vive（活），指“让活过来”，不是“活着”。" },
+        { lemma: "demonstrate", pos: "v.", ipa: "/ˈdemənstreɪt/", meaning: "证明；演示；示威", inText: "试验表明", collocation: "demonstrate that… / demonstrate how to do sth", diff: "名词 demonstration。比 show 正式，实验证据几乎都用它。" },
+        { lemma: "nominate", pos: "v.", ipa: "/ˈnɒmɪneɪt/", meaning: "提名；任命", inText: "合作社提名一位种植者", collocation: "nominate sb for / as…", diff: "名词 nomination。与 appoint 的区别：nominate 偏“提名待定”，appoint 是“任命到岗”。" },
+        { lemma: "outperform", pos: "v.", ipa: "/ˌaʊtpəˈfɔːm/", meaning: "表现优于；胜过", inText: "表现优于邻近地块", collocation: "outperform a rival / expectations", diff: "out- 表“超过”，同族 outnumber（数量超过）、outlive（比…活得久）、outweigh（比…更重要）。" },
+        { lemma: "endorse", pos: "v.", ipa: "/ɪnˈdɔːs/", meaning: "支持；为…背书；在背面签名", inText: "推广人员开始支持这种做法", collocation: "endorse a plan / a candidate", diff: "名词 endorsement。原义是支票背面签字，所以带“背书担保”的意味。" },
+        { lemma: "dwell", pos: "v.", ipa: "/dwel/", meaning: "居住；细想、反复琢磨", inText: "不必细究化学原理", collocation: "dwell on / upon sth；dwell in", diff: "过去式 dwelt 或 dwelled。六级阅读几乎都考 dwell on＝反复纠结，多带贬义。" },
+        { lemma: "dedicate", pos: "v.", ipa: "/ˈdedɪkeɪt/", meaning: "致力于；献给", inText: "把十年献给这个问题", collocation: "dedicate oneself / sth to…", diff: "形容词 dedicated（专注的、专用的）。注意 be dedicated to doing，to 是介词。" },
+        { lemma: "fertilize", pos: "v.", ipa: "/ˈfɜːtəlaɪz/", meaning: "施肥；使受精", inText: "减少施肥次数", collocation: "fertilize the soil / crops", diff: "名词 fertilizer（化肥）、fertility（肥力）。英式也拼作 fertilise。" },
+        { lemma: "illuminate", pos: "v.", ipa: "/ɪˈluːmɪneɪt/", meaning: "照亮；阐明", inText: "卫星图像照见恢复格局", collocation: "illuminate a subject / the issue", diff: "名词 illumination。由“照亮”引申为“使问题清楚”，阅读常考。" },
+        { lemma: "withdraw", pos: "v.", ipa: "/wɪðˈdrɔː/", meaning: "撤回；退出；取（钱）", inText: "政府过早撤回支持", collocation: "withdraw support / an offer；withdraw from", diff: "名词 withdrawal。过去式 withdrew，过去分词 withdrawn。" },
+        { lemma: "substitute", pos: "v.", ipa: "/ˈsʌbstɪtjuːt/", meaning: "用…替代；n. 替代品", inText: "用堆肥替代合成化肥", collocation: "substitute A for B", diff: "方向最容易错：substitute A for B＝用 A 代替 B，等于 replace B with A。名词 substitution。" },
+        { lemma: "implement", pos: "v.", ipa: "/ˈɪmplɪment/", meaning: "实施；执行", inText: "实施简单的轮作", collocation: "implement a policy / a plan / a reform", diff: "作名词时重音前移 /ˈɪmplɪmənt/，指“工具、器具”。" },
+        { lemma: "propel", pos: "v.", ipa: "/prəˈpel/", meaning: "推动；驱使", inText: "推动它的是算术而非情怀", collocation: "propel sb/sth forward / into", diff: "名词 propulsion。比 push 更强调持续向前。" },
+        { lemma: "reckon", pos: "v.", ipa: "/ˈrekən/", meaning: "认为；估算", inText: "邻居们认为他终会被证明是对的", collocation: "reckon that…；reckon on sth", diff: "口语里 I reckon＝我觉得；阅读里常作“估计、推断”。" },
+        { lemma: "deteriorate", pos: "v.", ipa: "/dɪˈtɪəriəreɪt/", meaning: "恶化；退化", inText: "土地持续退化", collocation: "conditions deteriorate；deteriorate into", diff: "名词 deterioration。比 worsen 正式，反义 improve。" },
+        { lemma: "sustain", pos: "v.", ipa: "/səˈsteɪn/", meaning: "维持；支撑；遭受（损失）", inText: "曾维持一县生计的收成", collocation: "sustain growth / life / a loss", diff: "形容词 sustainable 是六级作文高频词，兼“可持续的”和“可承受的”两义。" },
+        { lemma: "certify", pos: "v.", ipa: "/ˈsɜːtɪfaɪ/", meaning: "认证；正式证明", inText: "认证机构认证产品", collocation: "certify that…；be certified as", diff: "名词 certification，形容词 certified（持证的）。" },
+        { lemma: "prolong", pos: "v.", ipa: "/prəˈlɒŋ/", meaning: "延长", inText: "把试验再延长五年", collocation: "prolong life / a stay / the process", diff: "名词 prolongation。与 lengthen 近义，prolong 多指“让持续时间变长”。" },
+        { lemma: "compensate", pos: "v.", ipa: "/ˈkɒmpenseɪt/", meaning: "补偿；弥补", inText: "补偿种植者转型期的损失", collocation: "compensate sb for sth；compensate for", diff: "名词 compensation。compensate for 后面接“缺失的东西”，不接人。" },
+        { lemma: "multiply", pos: "v.", ipa: "/ˈmʌltɪplaɪ/", meaning: "繁殖；成倍增加；乘", inText: "微生物在健康土壤里繁殖", collocation: "multiply rapidly；multiply A by B", diff: "名词 multiplication。本义是“乘”，所以自带“成倍”的画面。" },
+        { lemma: "underlie", pos: "v.", ipa: "/ˌʌndəˈlaɪ/", meaning: "构成…的基础；是…的根源", inText: "构成肥力基础的化学过程", collocation: "the factors that underlie…", diff: "过去式 underlay，分词 underlying。形容词 underlying＝潜在的、根本的，六级高频。" },
+        { lemma: "relocate", pos: "v.", ipa: "/ˌriːləʊˈkeɪt/", meaning: "迁移；重新安置", inText: "把试验迁到更干旱的地方", collocation: "relocate to…；relocate staff", diff: "名词 relocation。re-（再）+ locate（安置）。" },
+        { lemma: "exaggerate", pos: "v.", ipa: "/ɪɡˈzædʒəreɪt/", meaning: "夸大", inText: "热情有时会夸大收益", collocation: "exaggerate the benefits / importance", diff: "名词 exaggeration，形容词 exaggerated（夸张的）。" },
+        { lemma: "transcend", pos: "v.", ipa: "/trænˈsend/", meaning: "超越；超出（范围）", inText: "超越农业本身", collocation: "transcend boundaries / differences", diff: "名词 transcendence。trans-（越过）+ scandere（攀登），画面是“翻过去”。" }
       ]
     }
   ]
