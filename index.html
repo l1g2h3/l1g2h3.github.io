@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LGH</title>
+<meta name="description" content="个人主页：阅读、词汇与一些小工具。">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="assets/home.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="./">
+      <span class="dot" aria-hidden="true"></span>
+      <span id="brandName">LGH</span>
+    </a>
+    <nav class="nav">
+      <a href="#work">模块</a>
+      <a href="#about">关于</a>
+      <a href="#contact">联系</a>
+      <button id="themeBtn" class="icon-btn" title="切换配色" aria-label="切换配色">◐</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <p class="eyebrow" id="heroKicker">PERSONAL SITE</p>
+    <h1 class="hero-title" id="heroTitle">LGH</h1>
+    <p class="hero-sub" id="heroSub">在这里放一句自我介绍。</p>
+    <p class="hero-note" id="heroNote"></p>
+    <div class="hero-links" id="heroLinks"></div>
+  </section>
+
+  <section id="work" class="block">
+    <div class="block-head">
+      <h2>模块</h2>
+      <span class="block-hint">能用的和在建的</span>
+    </div>
+    <div class="grid" id="modules"></div>
+  </section>
+
+  <section id="about" class="block">
+    <div class="block-head"><h2>关于</h2></div>
+    <div class="prose" id="aboutText"></div>
+  </section>
+
+  <section id="contact" class="block">
+    <div class="block-head"><h2>联系</h2></div>
+    <ul class="links" id="contactList"></ul>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <span>© <span id="year">2026</span> <span id="footName">LGH</span></span>
+    <span class="foot-dim">用 GitHub Pages 托管 · <a href="https://github.com/l1g2h3/l1g2h3.github.io">源码</a></span>
+  </div>
+</footer>
+
+<script src="assets/home.js"></script>
+</body>
+</html>
