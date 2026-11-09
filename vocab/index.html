@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="六级词汇短文阅读：点词看释义、划词收生词本、翻牌复习，支持多设备同步。">
+<title>六级词汇阅读本</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#/">
+      <span class="brand-cn">六级词汇阅读本</span>
+      <span class="brand-en">CET-6 Reader</span>
+    </a>
+
+    <div class="search">
+      <svg class="search-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg>
+      <input id="search" type="search" placeholder="搜单词 / 中文释义 / 搭配" autocomplete="off" spellcheck="false">
+      <kbd class="search-kbd">/</kbd>
+      <div id="searchPanel" class="search-panel" hidden></div>
+    </div>
+
+    <nav class="nav" id="nav">
+      <a href="#/" data-nav="home">阅读</a>
+      <a href="#/lexicon" data-nav="lexicon">领域词汇</a>
+      <a href="#/list" data-nav="list">词表</a>
+      <a href="#/notebook" data-nav="notebook">生词本</a>
+      <a href="#/review" data-nav="review">复习</a>
+      <a href="#/settings" data-nav="settings">设置</a>
+      <a href="../" class="back-home" title="返回个人主页">← 主页</a>
+      <button id="themeBtn" class="icon-btn" title="切换配色" aria-label="切换配色">◐</button>
+    </nav>
+  </div>
+</header>
+
+<main id="app"></main>
+
+<aside id="panel" class="panel" hidden aria-hidden="true"></aside>
+<div id="selPop" class="sel-pop" hidden></div>
+<div id="scrim" class="scrim" hidden></div>
+<div id="toast" class="toast" hidden></div>
+
+<script src="data.js"></script>
+<script src="sync.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
