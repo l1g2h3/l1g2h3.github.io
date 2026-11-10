@@ -69,13 +69,15 @@
       ? '<section class="block"><h2>视频</h2><div class="videos">' + videos.map((it) =>
           '<figure><video controls preload="none" playsinline src="' + esc(asset(it.src)) + '"' +
           (it.poster ? ' poster="' + esc(asset(it.poster)) + '"' : '') + '></video>' +
-          '<figcaption>' + esc(it.title) + '</figcaption></figure>').join('') + '</div></section>'
+          '<figcaption>' + esc(it.title) +
+          (it.note ? '<em>' + esc(it.note) + '</em>' : '') + '</figcaption></figure>').join('') + '</div></section>'
       : '';
 
     const fileBlock = files.length
       ? '<section class="block"><h2>文件</h2><ul class="files">' + files.map((it) =>
           '<li><a href="' + esc(asset(it.src)) + '" target="_blank" rel="noopener">' +
-          '<span class="fname">' + esc(it.title) + '</span>' +
+          '<span class="fbody"><span class="fname">' + esc(it.title) + '</span>' +
+          (it.desc ? '<span class="fdesc">' + esc(it.desc) + '</span>' : '') + '</span>' +
           '<span class="fmeta">' + esc(it.note || 'PDF') + (it.size ? ' · ' + sizeText(it.size) : '') + '</span></a></li>').join('') + '</ul></section>'
       : '';
 
