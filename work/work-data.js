@@ -1,6 +1,6 @@
 /* 项目内容 — 每个模块一条
    字段：title / tag / year / lead / meta / body / items
-   item: { type: 'image'|'video'|'file', src, title, note, size }
+   item: { type: 'image'|'video'|'file', src, title, note, desc, size }
    加模块：复制一条，往 media/ 里放文件即可，页面不用改。 */
 
 const WORK = {
@@ -19,12 +19,36 @@ const WORK = {
       '校赛练的是速度，国赛练的是稳，美赛练的是把话说清楚。这几篇论文风格不一样，早期偏堆方法，后面几篇更愿意花篇幅解释假设为什么成立、结果在什么条件下会崩。'
     ],
     items: [
-      { type: 'file', src: 'media/modeling/25-guosai.pdf', title: '2025 全国大学生数学建模竞赛', note: '国赛', size: 2140 * 1024 },
-      { type: 'file', src: 'media/modeling/25-guosai-school-a.pdf', title: '2025 国赛校赛 A 题', note: '校赛', size: 1559 * 1024 },
-      { type: 'file', src: 'media/modeling/26-guosai.pdf', title: '2026 全国大学生数学建模竞赛', note: '国赛', size: 2050 * 1024 },
-      { type: 'file', src: 'media/modeling/26-guosai-school.pdf', title: '2026 国赛校赛', note: '校赛', size: 4646 * 1024 },
-      { type: 'file', src: 'media/modeling/26-meisai.pdf', title: '2026 美国大学生数学建模竞赛', note: '美赛', size: 7118 * 1024 },
-      { type: 'file', src: 'media/modeling/26-meisai-school.pdf', title: '2026 美赛校赛', note: '校赛', size: 6729 * 1024 }
+      {
+        type: 'file', src: 'media/modeling/25-guosai.pdf',
+        title: '2025 全国大学生数学建模竞赛', note: '国赛 · 48 页', size: 2140 * 1024,
+        desc: '用 Gamma 分布回归刻画胎儿 Y 染色体浓度与孕周、BMI 的关系，再按 BMI 分组做风险优化，给出 NIPT 的建议时点与异常判定。'
+      },
+      {
+        type: 'file', src: 'media/modeling/25-guosai-school-a.pdf',
+        title: '2025 国赛校赛 A 题', note: '校赛 · 36 页', size: 1559 * 1024,
+        desc: '巨大肾积水的输尿管流量—压降关系：泊肃叶定律加修正项的灰箱模型，与 SVR、LightGBM、Lasso、PLS 四种回归对比。'
+      },
+      {
+        type: 'file', src: 'media/modeling/26-guosai.pdf',
+        title: '2026 全国大学生数学建模竞赛', note: '国赛 · 27 页', size: 2050 * 1024,
+        desc: '微网购电策略：日前时序预测加日内滚动随机优化，在光伏波动和五倍紧急电价下压低总成本。'
+      },
+      {
+        type: 'file', src: 'media/modeling/26-guosai-school.pdf',
+        title: '2026 国赛校赛', note: '校赛 · 32 页', size: 4646 * 1024,
+        desc: '锂离子电池快充策略与循环寿命：72 种策略的衰减归因，再用前 100 圈数据预测寿命，最后做充电时间与寿命的权衡。'
+      },
+      {
+        type: 'file', src: 'media/modeling/26-meisai.pdf',
+        title: '2026 美国大学生数学建模竞赛', note: '美赛 D 题 · 30 页', size: 7118 * 1024,
+        desc: '以 WNBA 印第安纳狂热队为例，用内—外环决策框架把竞技表现和商业收益放进同一套优化里。'
+      },
+      {
+        type: 'file', src: 'media/modeling/26-meisai-school.pdf',
+        title: '2026 美赛校赛', note: '校赛 A 题 · 30 页', size: 6729 * 1024,
+        desc: '城市污染物跨尺度输运：分段耦合高斯烟羽加对流扩散，算出室外浓度到场内分布的全过程。'
+      }
     ]
   },
 
@@ -39,13 +63,14 @@ const WORK = {
       ['软著登记号', '2026SR0601239']
     ],
     body: [
-      '方向是从"类脑"这边切进去的：人看屏幕上的球，不会逐像素处理，而是抓少数几个显著位置。所以试着把自注意力放在帧特征上做稀疏化，再交给 PPO 决策，看能不能用更少的样本学到同样的策略。',
-      'Pong 只是最小的试验台——状态简单、奖励稀疏、胜负清楚。真正想验证的是：注意力挑出来的位置，和人类看球时会盯的地方是否重合。这一点还在做。'
+      '方向是从“类脑”这边切进去的：人看屏幕上的球，不会逐像素处理，而是抓少数几个显著位置。所以试着把自注意力放在帧特征上做稀疏化，再交给 PPO 决策，看能不能用更少的样本学到同样的策略。',
+      'Pong 只是最小的试验台——状态简单、奖励稀疏、胜负清楚。真正想验证的是：注意力挑出来的位置，和人类看球时会盯的地方是否重合。这一点还在做。',
+      '下面这段视频不是 Pong，是参加腾讯比赛时的实机录屏（带宝箱和技能的地图场景），和这个智能体不是同一个任务，只作为比赛经历留档。'
     ],
     items: [
       { type: 'image', src: 'media/rl/copyright.jpg', title: '软件著作权登记证书', note: '国家版权局 · 2026SR0601239' },
-      { type: 'file', src: 'media/rl/pong-manual.pdf', title: '软件说明书', note: 'PDF', size: 719 * 1024 },
-      { type: 'video', src: 'media/rl/pong-demo.mp4', title: 'Pong 智能体运行演示' }
+      { type: 'file', src: 'media/rl/pong-manual.pdf', title: '软件说明书', note: 'PDF', size: 719 * 1024, desc: 'Pong 智能体的模块划分、接口与运行说明。' },
+      { type: 'video', src: 'media/rl/tencent-match.mp4', title: '腾讯比赛 · 实机录屏', note: '宝箱与技能的地图场景' }
     ]
   },
 
@@ -53,20 +78,22 @@ const WORK = {
     title: 'CT 协议 DSA 路径规划',
     tag: '系统',
     year: '2026',
-    lead: '低剂量介入下的 CT-DSA 虚实联动路径仿真与智能寻角控制。',
+    lead: '低剂量介入下的 CT-DSA 虚实联动路径仿真与智能寻角控制，获第十一届全国大学生生物医学工程创新设计竞赛二等奖。',
     meta: [
       ['角色', '路径规划与仿真'],
       ['场景', '心脑血管介入'],
+      ['获奖', '生医工创新设计竞赛 · 二等奖'],
       ['关键词', '血管分割 · 入路约束 · 角度优化']
     ],
     body: [
-      '介入手术里，C 臂要绕病人转到一个"看得清"的角度，同时尽量少扫、少造影剂。这件事拆开是三步：把血管从影像里分出来，判断针/导管能不能从这条路径进去，再在所有可行角度里挑代价最小的那几个。',
-      '系统做成虚实联动：虚拟端在重建的血管模型上搜索路径和角度，真实端按同样的协议驱动扫描，两边用同一套坐标系核对。下面两份材料是论文和获奖证书，视频是仿真过程。'
+      '介入手术里，C 臂要绕病人转到一个“看得清”的角度，同时尽量少扫、少造影剂。这件事拆开是三步：把血管从影像里分出来，判断针/导管能不能从这条路径进去，再在所有可行角度里挑代价最小的那几个。',
+      '系统做成虚实联动：虚拟端在重建的血管模型上搜索路径和角度，真实端按同样的协议驱动扫描，两边用同一套坐标系核对。证书上的项目名是《面向复杂血管介入手术的绿色智能虚实联动影像仿真与优化系统》。'
     ],
     items: [
       { type: 'image', src: 'media/dsa/poster.jpg', title: '项目海报', note: '系统总览' },
-      { type: 'file', src: 'media/dsa/paper.pdf', title: '面向低剂量介入的 CT-DSA 虚实联动路径仿真与智能寻角控制系统', note: '论文', size: 2779 * 1024 },
-      { type: 'file', src: 'media/dsa/award.pdf', title: '获奖证书', note: 'PDF', size: 1769 * 1024 },
+      { type: 'image', src: 'media/dsa/award.jpg', title: '获奖证书', note: '第十一届生医工创新设计竞赛 · 二等奖' },
+      { type: 'file', src: 'media/dsa/paper.pdf', title: '面向低剂量介入的 CT-DSA 虚实联动路径仿真与智能寻角控制系统', note: '论文', size: 2779 * 1024, desc: '方法、实验与结果分析。' },
+      { type: 'file', src: 'media/dsa/award.pdf', title: '获奖证书（PDF 原文件）', note: '扫描件', size: 1769 * 1024 },
       { type: 'video', src: 'media/dsa/demo-1.mp4', title: '虚实联动仿真' },
       { type: 'video', src: 'media/dsa/demo-2.mp4', title: '路径与角度演示' }
     ]
@@ -106,7 +133,7 @@ const WORK = {
       ['产出', '一堆小东西']
     ],
     body: [
-      '这些实验没有论文，也没有验收标准，纯粹是想看看"能不能做出来"。做出来之后通常会发现：能，但要花三倍时间。',
+      '这些实验没有论文，也没有验收标准，纯粹是想看看“能不能做出来”。做出来之后通常会发现：能，但要花三倍时间。',
       '下面几张是留下的记录：打印的三星堆面具、激光雕的木板、紫光下固化的徽章。模型大多是从公开模型改的，切片参数自己调。'
     ],
     items: [
