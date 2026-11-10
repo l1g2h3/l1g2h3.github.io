@@ -885,7 +885,14 @@ function boot() {
 
     pedGroup.add(g);
     pedMeshes.push(body, head);
-    peds.push({ cfg, g, legs, r, a: a0, speed, phase: i * 1.7, bob: 0.02 + (i % 3) * 0.006 });
+    peds.push({
+      cfg, g, legs, r, a: a0, speed, phase: i * 1.7, bob: 0.02 + (i % 3) * 0.006,
+      route: i % 3 === 0 ? 'avenue' : 'ring',
+      ang: -Math.PI / 2 + (i % 6) * (Math.PI / 3),
+      s: 14 + (i % 5) * 2.6,
+      dir: i % 2 ? 1 : -1,
+      v: 0.9 + (i % 4) * 0.22
+    });
   });
 
   /* 行人的名字标签 */
@@ -997,8 +1004,8 @@ function boot() {
     buildings.forEach((b) => { b.el.style.display = 'none'; });
     peds.forEach((x) => { x.el.style.display = 'none'; });
     room.labels.forEach((l) => { l.el.style.display = ''; });
-    camera.position.set(0, 3.2, 9.6);
-    controls.target.set(0, 2.9, -2.5);
+    camera.position.set(0, 2.55, 6.2);
+    controls.target.set(0, 2.15, -3.0);
     controls.minDistance = 5;
     controls.maxDistance = 15;
     controls.maxPolarAngle = Math.PI * 0.54;
@@ -1206,9 +1213,21 @@ function boot() {
     /* 行人走动 */
     if (mode === 'city') {
       peds.forEach((p) => {
-        p.a += p.speed * dt;
-        p.g.position.set(Math.cos(p.a) * p.r, 0, Math.sin(p.a) * p.r);
-        p.g.rotation.y = -p.a + (p.speed > 0 ? Math.PI / 2 : -Math.PI / 2);
+        let dx, dz;
+        if (p.route === 'ring') {
+          p.a += p.speed * dt;
+          p.g.position.set(Math.cos(p.a) * p.r, 0, Math.sin(p.a) * p.r);
+          dx = -Math.sin(p.a) * p.speed;
+          dz = Math.cos(p.a) * p.speed;
+        } else {
+          p.s += p.dir * p.v * dt;
+          if (p.s > 30) { p.s = 30; p.dir = -1; }
+          if (p.s < 13) { p.s = 13; p.dir = 1; }
+          p.g.position.set(Math.cos(p.ang) * p.s, 0, Math.sin(p.ang) * p.s);
+          dx = Math.cos(p.ang) * p.dir;
+          dz = Math.sin(p.ang) * p.dir;
+        }
+        p.g.rotation.y = Math.atan2(dx, dz);
         const swing = Math.sin(clock.elapsedTime * 6 + p.phase) * 0.5;
         p.legs[0].rotation.x = swing;
         p.legs[1].rotation.x = -swing;
@@ -1240,11 +1259,39 @@ function boot() {
     }
 
     if (mode === 'city') {
-      buildings.forEach((b) => {
-        place(b.el, b.anchor, hovered === b || selected === b ? 1 : 0.72);
-      });
+      const slots = [];
+      buildings.forEach((b) => slots.push({
+        el: b.el, v: b.anchor, op: hovered === b || selected === b ? 1 : 0.78, pr: hovered === b ? 0 : 1
+      }));
       peds.forEach((p) => {
-        place(p.el, tmpPed.set(p.g.position.x, 1.75, p.g.position.z), hoveredPed === p.cfg ? 1 : 0.5);
+        if (hoveredPed !== p.cfg) { p.el.style.opacity = '0'; return; }
+        slots.push({
+          el: p.el, v: tmpPed.set(p.g.position.x, 1.75 + p.g.position.y, p.g.position.z),
+          op: 1, pr: 0
+        });
+      });
+      slots.sort((a, b) => a.pr - b.pr);
+      const used = [];
+      slots.forEach((slot) => {
+        tmpV.copy(slot.v).project(camera);
+        if (tmpV.z >= 1 || Math.abs(tmpV.x) > 1.2 || Math.abs(tmpV.y) > 1.2) {
+          slot.el.style.opacity = '0';
+          return;
+        }
+        const x = (tmpV.x * 0.5 + 0.5) * window.innerWidth;
+        const y = (-tmpV.y * 0.5 + 0.5) * window.innerHeight;
+        const w = (slot.el.offsetWidth || 90) + 8;
+        const h = 26;
+        let placedY = null;
+        for (const off of [0, -26, 26, -52, 52, -78]) {
+          const yy = y + off;
+          const hit = used.some((r) => Math.abs(r.x - x) < (r.w + w) / 2 && Math.abs(r.y - yy) < (r.h + h) / 2);
+          if (!hit) { placedY = yy; break; }
+        }
+        if (placedY === null) { slot.el.style.opacity = '0'; return; }
+        used.push({ x, y: placedY, w, h });
+        slot.el.style.opacity = String(slot.op);
+        slot.el.style.transform = 'translate(-50%,-50%) translate(' + x + 'px,' + placedY + 'px)';
       });
     } else if (room) {
       room.labels.forEach((l) => place(l.el, l.pos, hoveredHot && hoveredHot.title.indexOf(l.title) >= 0 ? 1 : 0.66));
