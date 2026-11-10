@@ -5,7 +5,7 @@
    ========================================================= */
 import * as THREE from 'three';
 import { OrbitControls } from './assets/vendor/OrbitControls.js';
-import { createRoom } from './room.js?v=20261110c';
+import { createRoom } from './room.js?v=bmwak0w1w';
 
 /* ---------------- 模块定义 ---------------- */
 const MODULES = [
@@ -967,7 +967,13 @@ function boot() {
     document.getElementById('cardTitle').textContent = o.title || '';
     document.getElementById('cardDesc').textContent = o.desc || '';
     const go = document.getElementById('cardGo');
-    if (o.href) { go.href = o.href; go.textContent = o.hrefText || '进入'; go.style.display = ''; }
+    if (o.href) {
+      go.href = o.href;
+      go.textContent = o.hrefText || '进入';
+      go.style.display = '';
+      if (/\.pdf$/i.test(o.href)) { go.target = '_blank'; go.rel = 'noopener'; }
+      else { go.removeAttribute('target'); go.removeAttribute('rel'); }
+    }
     else { go.style.display = 'none'; }
     card.hidden = false;
   }
@@ -1013,6 +1019,15 @@ function boot() {
     if (exitBtn) exitBtn.hidden = false;
     if (bottomBar) bottomBar.style.display = 'none';
     if (hintEl) { hintEl.textContent = '拖动环视 · 点击书本或论文打开'; hintEl.style.opacity = '1'; }
+
+    /* ?paper=0..5 直接展开某篇论文的卡片，方便分享 */
+    const qp = parseInt(new URLSearchParams(location.search).get('paper'), 10);
+    if (!Number.isNaN(qp)) {
+      const papers = room.hotspots.filter((h) => h.userData.item && h.userData.item.kind === 'paper');
+      const item = papers[qp] && papers[qp].userData.item;
+      if (item) showCard(item);
+    }
+
     controls.update();
   }
 
