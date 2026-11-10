@@ -8,8 +8,8 @@
    ========================================================= */
 window.VOCAB = {
   meta: {
-    title: "六级词汇阅读本",
-    subtitle: "CET-6 Vocabulary Reader",
+    title: "英语阅读本",
+    subtitle: "English Reader",
     updated: "2026-11-10"
   },
 
@@ -33,8 +33,8 @@ window.VOCAB = {
       { en: "a control group", zh: "对照组", note: "实验类文章必备，对应 experimental group" },
       { en: "a statistically significant difference", zh: "统计上显著的差异", note: "谨慎表述，避免直接说 prove" },
       { en: "draw a conclusion", zh: "得出结论", note: "draw 比 make 更书面" },
-      { en: "raise questions about", zh: "对……提出疑问", note: "六级阅读里引出争议的常用动词" },
-      { en: "the underlying mechanism", zh: "背后的机制", note: "underlying 是六级高频形容词，指“潜藏的、根本的”" },
+      { en: "raise questions about", zh: "对……提出疑问", note: "阅读里引出争议的常用动词" },
+      { en: "the underlying mechanism", zh: "背后的机制", note: "underlying 是高频形容词，指“潜藏的、根本的”" },
       { en: "a body of research", zh: "一批研究成果", note: "a body of 还可接 evidence / work / knowledge" },
       { en: "findings suggest that…", zh: "研究结果表明……", note: "比 prove 稳妥，学术写作偏好这种表述" },
       { en: "a correlation between A and B", zh: "A 与 B 的相关性", note: "注意：correlation 不等于 causation" }
@@ -42,7 +42,7 @@ window.VOCAB = {
     society: [
       { en: "social cohesion", zh: "社会凝聚力", note: "cohesion 指“黏合”，常与 weaken / strengthen 搭配" },
       { en: "widening inequality", zh: "不断扩大的不平等", note: "widening / growing 是修饰 gap、inequality 的固定搭配" },
-      { en: "a sense of belonging", zh: "归属感", note: "a sense of + 抽象名词，六级高频结构" },
+      { en: "a sense of belonging", zh: "归属感", note: "a sense of + 抽象名词，高频结构" },
       { en: "marginalised groups", zh: "边缘群体", note: "也作 vulnerable groups / disadvantaged groups" },
       { en: "social mobility", zh: "社会流动性", note: "常说 upward mobility（向上流动）" },
       { en: "public attitudes towards", zh: "公众对……的态度", note: "attitude 后接 towards 或 to" },
@@ -89,7 +89,7 @@ window.VOCAB = {
       { en: "adapt to a changing climate", zh: "适应气候变化", note: "adapt 是“适应”，mitigate 是“减缓”，别混" },
       { en: "a tipping point", zh: "临界点", note: "指越过之后不可逆的关口" },
       { en: "carbon footprint", zh: "碳足迹", note: "常说 reduce one's carbon footprint" },
-      { en: "climate resilience", zh: "气候韧性", note: "resilience 是六级高频抽象名词" },
+      { en: "climate resilience", zh: "气候韧性", note: "resilience 是高频抽象名词" },
       { en: "phase out fossil fuels", zh: "逐步淘汰化石燃料", note: "phase out 强调分阶段退出" },
       { en: "global warming", zh: "全球变暖", note: "更正式的说法是 climate change" }
     ],
@@ -98,7 +98,7 @@ window.VOCAB = {
       { en: "a widespread belief", zh: "普遍的看法", note: "widespread 修饰 belief、concern、support" },
       { en: "a striking contrast", zh: "鲜明的对比", note: "striking 比 obvious 更有力度" },
       { en: "a shift in attitudes", zh: "态度的转变", note: "shift in + 抽象名词，比 change 更强调方向" },
-      { en: "an emerging pattern", zh: "新出现的模式", note: "emerge 是六级阅读的高频动词" },
+      { en: "an emerging pattern", zh: "新出现的模式", note: "emerge 是阅读的高频动词" },
       { en: "a common misconception", zh: "常见的误解", note: "常用于“纠正看法”的段落开头" },
       { en: "a double-edged sword", zh: "双刃剑", note: "讨论利弊时的现成表达" },
       { en: "the root cause of", zh: "……的根源", note: "比 reason 更强调深层原因" },
@@ -114,10 +114,10 @@ window.VOCAB = {
       id: "b01",
       title: "Transparency on Paper",
       titleZh: "纸面上的透明",
-      genre: "六级议论文",
+      genre: "议论文",
       field: "policy",
       date: "2026-11-09",
-      note: "公共机构的信息公开 / 数字档案，六级仔细阅读常见题材。",
+      note: "公共机构的信息公开 / 数字档案，考试仔细阅读常见题材。",
 
       paragraphs: [
         {
@@ -153,12 +153,12 @@ window.VOCAB = {
         { lemma: "eliminate", pos: "v.", ipa: "/ɪˈlɪmɪneɪt/", meaning: "消除；淘汰", inText: "彻底消除（解释上的难题）", collocation: "eliminate a problem / a risk / a rival", diff: "和 alleviate 对照：eliminate 是彻底清零；alleviate 只是缓解痛苦或负担，不保证根除。" },
         { lemma: "retrieve", pos: "v.", ipa: "/rɪˈtriːv/", meaning: "取回；检索", inText: "调取（档案、数据）", collocation: "retrieve data / records / files；retrieve sth from…", diff: "和 detach 对照：retrieve 是“找回来”，detach 是“拆下来”。名词 retrieval。" },
         { lemma: "disclose", pos: "v.", ipa: "/dɪsˈkləʊz/", meaning: "披露；使公开", inText: "公开（机构信息）", collocation: "disclose information / figures / details", diff: "正式公文用词，比 reveal 更“机构化”。名词 disclosure。" },
-        { lemma: "detach", pos: "v.", ipa: "/dɪˈtætʃ/", meaning: "拆下；使分离", inText: "从卷宗上拆下", collocation: "detach A from B", diff: "反义 attach。形容词 detached 还有“超然、客观的”义，六级阅读会考。" },
+        { lemma: "detach", pos: "v.", ipa: "/dɪˈtætʃ/", meaning: "拆下；使分离", inText: "从卷宗上拆下", collocation: "detach A from B", diff: "反义 attach。形容词 detached 还有“超然、客观的”义，阅读会考。" },
         { lemma: "alleviate", pos: "v.", ipa: "/əˈliːvieɪt/", meaning: "缓解；减轻（痛苦、负担）", inText: "缓解眼前的成本压力", collocation: "alleviate the burden / pressure / poverty", diff: "不表示根除，常与 eliminate 放在一起做对比。名词 alleviation。" },
         { lemma: "intimidate", pos: "v.", ipa: "/ɪnˈtɪmɪdeɪt/", meaning: "恐吓；使畏惧", inText: "让普通读者望而生畏", collocation: "intimidate sb into doing sth；be intimidated by", diff: "形容词 intimidating＝令人生畏的；intimidated＝自己害怕的。" },
         { lemma: "reinforce", pos: "v.", ipa: "/ˌriːɪnˈfɔːs/", meaning: "加固；强化", inText: "加固流程", collocation: "reinforce a procedure / a view / a wall", diff: "拆成 re-in-force 就好记。本批和 enforce 出现在同一句里对照。" },
         { lemma: "subsidize", pos: "v.", ipa: "/ˈsʌbsɪdaɪz/", meaning: "补贴；资助", inText: "补贴存储与人力", collocation: "subsidize housing / storage / training", diff: "名词 subsidy。主语通常是政府、机构，不是个人。" },
-        { lemma: "frustrate", pos: "v.", ipa: "/frʌˈstreɪt/", meaning: "使受挫；使恼火", inText: "（读者）感到恼火", collocation: "be frustrated by / with；frustrate a plan", diff: "frustrated＝感到挫败的；frustrating＝令人恼火的，六级常考这一对。" },
+        { lemma: "frustrate", pos: "v.", ipa: "/frʌˈstreɪt/", meaning: "使受挫；使恼火", inText: "（读者）感到恼火", collocation: "be frustrated by / with；frustrate a plan", diff: "frustrated＝感到挫败的；frustrating＝令人恼火的，常考这一对。" },
         { lemma: "enforce", pos: "v.", ipa: "/ɪnˈfɔːs/", meaning: "执行；强制实施（法律、规则）", inText: "执行统一的公开规则", collocation: "enforce rules / a law / a ban", diff: "名词 enforcement。和 reinforce 只差一个前缀，意思完全不同。" },
         { lemma: "indulge", pos: "v.", ipa: "/ɪnˈdʌldʒ/", meaning: "沉溺；放纵；满足（喜好）", inText: "沉溺于开放的表象", collocation: "indulge in sth；indulge a taste for…", diff: "名词 indulgence。阅读里带轻微贬义，指“放任自己享受”。" },
         { lemma: "surpass", pos: "v.", ipa: "/səˈpɑːs/", meaning: "超过；胜过", inText: "在数量上超过彼此", collocation: "surpass expectations / a rival / a record", diff: "比 exceed 更有“跨过去”的画面感。surpass oneself＝超越自我。" },
@@ -179,10 +179,10 @@ window.VOCAB = {
       id: "b02",
       title: "The Ground Beneath the Harvest",
       titleZh: "收成之下的土地",
-      genre: "六级科普说明文",
+      genre: "科普说明文",
       field: "science",
       date: "2026-11-10",
-      note: "土壤退化与再生农业；六级科普、环境类常见题材，本批 24 个动词都放在同一场景里。",
+      note: "土壤退化与再生农业；考试科普、环境类常见题材，本批 24 个动词都放在同一场景里。",
 
       paragraphs: [
         {
@@ -219,7 +219,7 @@ window.VOCAB = {
         { lemma: "nominate", pos: "v.", ipa: "/ˈnɒmɪneɪt/", meaning: "提名；任命", inText: "合作社提名一位种植者", collocation: "nominate sb for / as…", diff: "名词 nomination。与 appoint 的区别：nominate 偏“提名待定”，appoint 是“任命到岗”。" },
         { lemma: "outperform", pos: "v.", ipa: "/ˌaʊtpəˈfɔːm/", meaning: "表现优于；胜过", inText: "表现优于邻近地块", collocation: "outperform a rival / expectations", diff: "out- 表“超过”，同族 outnumber（数量超过）、outlive（比…活得久）、outweigh（比…更重要）。" },
         { lemma: "endorse", pos: "v.", ipa: "/ɪnˈdɔːs/", meaning: "支持；为…背书；在背面签名", inText: "推广人员开始支持这种做法", collocation: "endorse a plan / a candidate", diff: "名词 endorsement。原义是支票背面签字，所以带“背书担保”的意味。" },
-        { lemma: "dwell", pos: "v.", ipa: "/dwel/", meaning: "居住；细想、反复琢磨", inText: "不必细究化学原理", collocation: "dwell on / upon sth；dwell in", diff: "过去式 dwelt 或 dwelled。六级阅读几乎都考 dwell on＝反复纠结，多带贬义。" },
+        { lemma: "dwell", pos: "v.", ipa: "/dwel/", meaning: "居住；细想、反复琢磨", inText: "不必细究化学原理", collocation: "dwell on / upon sth；dwell in", diff: "过去式 dwelt 或 dwelled。阅读几乎都考 dwell on＝反复纠结，多带贬义。" },
         { lemma: "dedicate", pos: "v.", ipa: "/ˈdedɪkeɪt/", meaning: "致力于；献给", inText: "把十年献给这个问题", collocation: "dedicate oneself / sth to…", diff: "形容词 dedicated（专注的、专用的）。注意 be dedicated to doing，to 是介词。" },
         { lemma: "fertilize", pos: "v.", ipa: "/ˈfɜːtəlaɪz/", meaning: "施肥；使受精", inText: "减少施肥次数", collocation: "fertilize the soil / crops", diff: "名词 fertilizer（化肥）、fertility（肥力）。英式也拼作 fertilise。" },
         { lemma: "illuminate", pos: "v.", ipa: "/ɪˈluːmɪneɪt/", meaning: "照亮；阐明", inText: "卫星图像照见恢复格局", collocation: "illuminate a subject / the issue", diff: "名词 illumination。由“照亮”引申为“使问题清楚”，阅读常考。" },
@@ -229,12 +229,12 @@ window.VOCAB = {
         { lemma: "propel", pos: "v.", ipa: "/prəˈpel/", meaning: "推动；驱使", inText: "推动它的是算术而非情怀", collocation: "propel sb/sth forward / into", diff: "名词 propulsion。比 push 更强调持续向前。" },
         { lemma: "reckon", pos: "v.", ipa: "/ˈrekən/", meaning: "认为；估算", inText: "邻居们认为他终会被证明是对的", collocation: "reckon that…；reckon on sth", diff: "口语里 I reckon＝我觉得；阅读里常作“估计、推断”。" },
         { lemma: "deteriorate", pos: "v.", ipa: "/dɪˈtɪəriəreɪt/", meaning: "恶化；退化", inText: "土地持续退化", collocation: "conditions deteriorate；deteriorate into", diff: "名词 deterioration。比 worsen 正式，反义 improve。" },
-        { lemma: "sustain", pos: "v.", ipa: "/səˈsteɪn/", meaning: "维持；支撑；遭受（损失）", inText: "曾维持一县生计的收成", collocation: "sustain growth / life / a loss", diff: "形容词 sustainable 是六级作文高频词，兼“可持续的”和“可承受的”两义。" },
+        { lemma: "sustain", pos: "v.", ipa: "/səˈsteɪn/", meaning: "维持；支撑；遭受（损失）", inText: "曾维持一县生计的收成", collocation: "sustain growth / life / a loss", diff: "形容词 sustainable 是作文高频词，兼“可持续的”和“可承受的”两义。" },
         { lemma: "certify", pos: "v.", ipa: "/ˈsɜːtɪfaɪ/", meaning: "认证；正式证明", inText: "认证机构认证产品", collocation: "certify that…；be certified as", diff: "名词 certification，形容词 certified（持证的）。" },
         { lemma: "prolong", pos: "v.", ipa: "/prəˈlɒŋ/", meaning: "延长", inText: "把试验再延长五年", collocation: "prolong life / a stay / the process", diff: "名词 prolongation。与 lengthen 近义，prolong 多指“让持续时间变长”。" },
         { lemma: "compensate", pos: "v.", ipa: "/ˈkɒmpenseɪt/", meaning: "补偿；弥补", inText: "补偿种植者转型期的损失", collocation: "compensate sb for sth；compensate for", diff: "名词 compensation。compensate for 后面接“缺失的东西”，不接人。" },
         { lemma: "multiply", pos: "v.", ipa: "/ˈmʌltɪplaɪ/", meaning: "繁殖；成倍增加；乘", inText: "微生物在健康土壤里繁殖", collocation: "multiply rapidly；multiply A by B", diff: "名词 multiplication。本义是“乘”，所以自带“成倍”的画面。" },
-        { lemma: "underlie", pos: "v.", ipa: "/ˌʌndəˈlaɪ/", meaning: "构成…的基础；是…的根源", inText: "构成肥力基础的化学过程", collocation: "the factors that underlie…", diff: "过去式 underlay，分词 underlying。形容词 underlying＝潜在的、根本的，六级高频。" },
+        { lemma: "underlie", pos: "v.", ipa: "/ˌʌndəˈlaɪ/", meaning: "构成…的基础；是…的根源", inText: "构成肥力基础的化学过程", collocation: "the factors that underlie…", diff: "过去式 underlay，分词 underlying。形容词 underlying＝潜在的、根本的，高频。" },
         { lemma: "relocate", pos: "v.", ipa: "/ˌriːləʊˈkeɪt/", meaning: "迁移；重新安置", inText: "把试验迁到更干旱的地方", collocation: "relocate to…；relocate staff", diff: "名词 relocation。re-（再）+ locate（安置）。" },
         { lemma: "exaggerate", pos: "v.", ipa: "/ɪɡˈzædʒəreɪt/", meaning: "夸大", inText: "热情有时会夸大收益", collocation: "exaggerate the benefits / importance", diff: "名词 exaggeration，形容词 exaggerated（夸张的）。" },
         { lemma: "transcend", pos: "v.", ipa: "/trænˈsend/", meaning: "超越；超出（范围）", inText: "超越农业本身", collocation: "transcend boundaries / differences", diff: "名词 transcendence。trans-（越过）+ scandere（攀登），画面是“翻过去”。" }
