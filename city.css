@@ -196,3 +196,9 @@ body::after {
 .label.room.active { border-color: var(--accent); color: var(--accent-2); }
 
 #exitRoom { position: fixed; top: 68px; left: 20px; z-index: 11; }
+
+#build {
+  position: fixed; right: 12px; bottom: 8px; z-index: 9;
+  font-family: var(--mono); font-size: 10px; letter-spacing: .12em;
+  color: var(--ink-3); opacity: .45; pointer-events: none;
+}
