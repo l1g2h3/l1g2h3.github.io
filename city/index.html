@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>模块城市 · LGH</title>
+<meta name="description" content="把主页上的模块做成一整座城市，点击建筑进入。">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="city.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "../assets/vendor/three.module.min.js",
+    "three/addons/": "../assets/vendor/"
+  }
+}
+</script>
+</head>
+<body>
+
+<div id="scene" aria-hidden="true"></div>
+<div id="labels" aria-hidden="true"></div>
+
+<header class="hud top">
+  <a class="back" href="../">← 主页</a>
+  <div class="title">模块城市<span>点击建筑进入</span></div>
+  <button id="listBtn" class="ghost" type="button">列表模式</button>
+</header>
+
+<aside id="card" class="card" hidden>
+  <div class="card-tag" id="cardTag"></div>
+  <h2 id="cardTitle"></h2>
+  <p id="cardDesc"></p>
+  <div class="card-actions">
+    <a id="cardGo" class="primary" href="#">进入</a>
+    <button id="cardClose" class="ghost" type="button">关闭</button>
+  </div>
+</aside>
+
+<footer class="hud bottom">
+  <button id="playBtn" class="ghost" type="button" aria-label="暂停昼夜循环">⏸</button>
+  <input id="timeRange" type="range" min="0" max="24" step="0.01" value="17.6" aria-label="时间">
+  <output id="clock">17:36</output>
+  <button id="rotateBtn" class="ghost" type="button">自动巡游</button>
+</footer>
+
+<div id="hint" class="hint">拖动旋转 · 滚轮缩放 · 点击建筑</div>
+
+<div id="loading" class="loading"><div class="spinner"></div><span>正在建城…</span></div>
+
+<section id="fallback" class="fallback" hidden>
+  <h1>模块</h1>
+  <ul id="fallbackList"></ul>
+  <p class="fallback-note">你的浏览器没有开启 WebGL，这里用列表方式呈现同样的内容。</p>
+</section>
+
+<script type="module" src="city.js"></script>
+</body>
+</html>
