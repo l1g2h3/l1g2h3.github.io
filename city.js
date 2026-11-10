@@ -153,7 +153,7 @@ function boot() {
         varying vec3 vDir;
         void main() {
           float h = clamp(vDir.y, -1.0, 1.0);
-          vec3 col = mix(bottomColor, topColor, smoothstep(-0.02, 0.62, h));
+          vec3 col = mix(bottomColor, topColor, smoothstep(-0.01, 0.34, h));
           float d = max(dot(normalize(vDir), normalize(sunDir)), 0.0);
           col += sunColor * (pow(d, 90.0) * 1.4 + pow(d, 8.0) * 0.16) * glow;
           gl_FragColor = vec4(col, 1.0);
@@ -683,8 +683,8 @@ function boot() {
     { e: -0.18, top: '#0d1526', bot: '#1d2740', sun: 0.00, hemi: 0.30, exp: 1.34, warm: 0.15 },
     { e: -0.02, top: '#2a3350', bot: '#6a4a5e', sun: 0.30, hemi: 0.32, exp: 1.20, warm: 0.65 },
     { e: 0.05, top: '#5b6690', bot: '#e08048', sun: 1.00, hemi: 0.36, exp: 1.10, warm: 1.00 },
-    { e: 0.20, top: '#6a86ae', bot: '#f2b478', sun: 2.20, hemi: 0.42, exp: 1.05, warm: 0.85 },
-    { e: 0.45, top: '#74a4cd', bot: '#eadfd0', sun: 3.20, hemi: 0.50, exp: 1.02, warm: 0.35 },
+    { e: 0.20, top: '#6a86ae', bot: '#eeba8b', sun: 2.20, hemi: 0.42, exp: 1.05, warm: 0.85 },
+    { e: 0.45, top: '#74a4cd', bot: '#e7e2d6', sun: 3.20, hemi: 0.50, exp: 1.02, warm: 0.35 },
     { e: 0.78, top: '#659ecd', bot: '#e7eff5', sun: 3.60, hemi: 0.56, exp: 1.00, warm: 0.10 },
     { e: 1.00, top: '#5d98cf', bot: '#e9f1f7', sun: 3.70, hemi: 0.58, exp: 0.98, warm: 0.00 }
   ].map((k) => ({ e: k.e, sun: k.sun, hemi: k.hemi, exp: k.exp, warm: k.warm, topC: new THREE.Color(k.top), botC: new THREE.Color(k.bot) }));
