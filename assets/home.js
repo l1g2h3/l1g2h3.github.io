@@ -12,6 +12,7 @@ const PROFILE = {
   // 顶部的三个胶囊按钮
   links: [
     { label: 'GitHub', sub: '@l1g2h3', href: 'https://github.com/l1g2h3' },
+    { label: '3D 城市', sub: 'beta', href: 'city/' },
     { label: '英语模块', sub: 'live', href: 'vocab/' },
     { label: '邮件', sub: '298137856@qq.com', href: 'mailto:298137856@qq.com' }
   ],
