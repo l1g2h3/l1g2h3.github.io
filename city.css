@@ -183,3 +183,16 @@ body::after {
 @media (prefers-reduced-motion: reduce) {
   .loading, .card { animation: none; transition: none; }
 }
+
+/* ---------- 行人 / 房间标签 ---------- */
+.label.ped {
+  font-size: 10.5px; padding: 3px 8px;
+  background: rgba(16, 14, 11, .42); border-color: rgba(255, 255, 255, .1);
+  color: var(--ink-3);
+}
+.label.ped b { font-weight: 500; color: var(--ink-2); }
+.label.ped.active { border-color: var(--accent); color: var(--accent-2); background: rgba(30, 22, 14, .85); }
+.label.room { font-size: 11px; padding: 4px 9px; }
+.label.room.active { border-color: var(--accent); color: var(--accent-2); }
+
+#exitRoom { position: fixed; top: 68px; left: 20px; z-index: 11; }
