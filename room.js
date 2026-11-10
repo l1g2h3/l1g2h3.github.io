@@ -173,14 +173,14 @@ export function createRoom(THREE, id) {
   /* ---------- 墙面：门与挂画 ---------- */
   const doorMat = new THREE.MeshStandardMaterial({ color: 0x5b4430, roughness: 0.8 });
   const door = new THREE.Mesh(new THREE.BoxGeometry(2.3, 3.5, 0.18), doorMat);
-  door.position.set(-7.6, 1.75, -7.34);
+  door.position.set(-9.25, 1.75, -7.34);
   scene.add(door);
   const knob = new THREE.Mesh(new THREE.SphereGeometry(0.09, 10, 10),
     new THREE.MeshStandardMaterial({ color: 0xc9a872, metalness: 0.8, roughness: 0.3 }));
-  knob.position.set(-6.7, 1.7, -7.2);
+  knob.position.set(-8.35, 1.7, -7.2);
   scene.add(knob);
   const doorFrame = new THREE.Mesh(new THREE.BoxGeometry(2.6, 3.8, 0.1), new THREE.MeshStandardMaterial({ color: 0x3d2e20, roughness: 0.8 }));
-  doorFrame.position.set(-7.6, 1.9, -7.4);
+  doorFrame.position.set(-9.25, 1.9, -7.4);
   scene.add(doorFrame);
 
   const artMat = [
@@ -201,20 +201,27 @@ export function createRoom(THREE, id) {
   /* 挂钟 */
   const clockBody = new THREE.Mesh(new THREE.CylinderGeometry(0.62, 0.62, 0.1, 24), new THREE.MeshStandardMaterial({ color: 0x2b221a, roughness: 0.7 }));
   clockBody.rotation.x = Math.PI / 2;
-  clockBody.position.set(6.4, 5.2, -7.3);
+  clockBody.position.set(8.7, 5.55, -7.3);
   scene.add(clockBody);
   const clockFace = new THREE.Mesh(new THREE.CircleGeometry(0.54, 24), new THREE.MeshStandardMaterial({ color: 0xf6eddc, roughness: 0.6 }));
-  clockFace.position.set(6.4, 5.2, -7.24);
+  clockFace.position.set(8.7, 5.55, -7.24);
   scene.add(clockFace);
 
   /* 顶部灯带 */
-  const panelMat = new THREE.MeshStandardMaterial({
-    color: 0x1a1510, emissive: new THREE.Color('#ffd9a8'), emissiveIntensity: 1.35, roughness: 0.6
+  const bulbMat = new THREE.MeshStandardMaterial({
+    color: 0x1a1510, emissive: new THREE.Color('#ffd9a8'), emissiveIntensity: 2.4, roughness: 0.4
   });
-  [-3.4, 0, 3.4].forEach((x) => {
-    const panel = new THREE.Mesh(new THREE.BoxGeometry(0.32, 0.06, 7.6), panelMat);
-    panel.position.set(x, 6.2, 0);
-    scene.add(panel);
+  const cordMat = new THREE.MeshStandardMaterial({ color: 0x2a221a, roughness: 1 });
+  [-4.4, 0, 4.4].forEach((x) => {
+    const cord = new THREE.Mesh(new THREE.CylinderGeometry(0.012, 0.012, 1.1, 5), cordMat);
+    cord.position.set(x, 6.35, 1.2);
+    scene.add(cord);
+    const bulb = new THREE.Mesh(new THREE.SphereGeometry(0.14, 12, 10), bulbMat);
+    bulb.position.set(x, 5.75, 1.2);
+    scene.add(bulb);
+    const glow = new THREE.PointLight(0xffd9a8, 9, 12, 2);
+    glow.position.set(x, 5.6, 1.2);
+    scene.add(glow);
   });
 
   /* ---------- 灯光 ---------- */
@@ -235,12 +242,13 @@ export function createRoom(THREE, id) {
 
   const lampMat = new THREE.MeshStandardMaterial({ color: 0x2a221a, emissive: new THREE.Color('#ffd9a0'), emissiveIntensity: 1.6, roughness: 0.5 });
   [[-4.5, 1.5], [4.5, 1.5]].forEach(([x, z]) => {
-    const shade = new THREE.Mesh(new THREE.ConeGeometry(1.1, 0.7, 16, 1, true), lampMat);
-    shade.position.set(x, 5.4, z);
-    shade.rotation.x = Math.PI;
-    scene.add(shade);
-    const wire = new THREE.Mesh(new THREE.CylinderGeometry(0.02, 0.02, 1.4, 6), new THREE.MeshStandardMaterial({ color: 0x2a221a }));
-    wire.position.set(x, 6.4, z);
+    const bulb = new THREE.Mesh(new THREE.SphereGeometry(0.2, 14, 12), new THREE.MeshStandardMaterial({
+      color: 0x2a221a, emissive: new THREE.Color('#ffe0b0'), emissiveIntensity: 2.6, roughness: 0.35
+    }));
+    bulb.position.set(x, 5.05, z);
+    scene.add(bulb);
+    const wire = new THREE.Mesh(new THREE.CylinderGeometry(0.016, 0.016, 1.9, 6), new THREE.MeshStandardMaterial({ color: 0x2a221a }));
+    wire.position.set(x, 6.1, z);
     scene.add(wire);
     const pl = new THREE.PointLight(0xffd9a8, 26, 22, 2);
     pl.position.set(x, 4.9, z);
@@ -306,9 +314,9 @@ export function createRoom(THREE, id) {
     const frameMat = new THREE.MeshStandardMaterial({ color: 0x4a3a28, roughness: 0.75 });
     PAPERS.forEach((p, i) => {
       const col = i % 3, row = Math.floor(i / 3);
-      const x = -6.2 + col * 6.2;
-      const y = row === 0 ? 4.35 : 1.75;
-      const w = 2.9, h = 3.3;
+      const x = -5.8 + col * 5.8;
+      const y = row === 0 ? 4.62 : 1.12;
+      const w = 2.85, h = 2.95;
 
       const paperMat = new THREE.MeshStandardMaterial({ map: paperTexture(THREE, p.title, p.sub), roughness: 0.9 });
       const sheet = new THREE.Mesh(new THREE.BoxGeometry(w, h, 0.1), paperMat);
@@ -322,7 +330,7 @@ export function createRoom(THREE, id) {
       const item = { kind: 'paper', title: p.title + ' · ' + p.sub, note: '点开看论文原文件', href: p.href };
       sheet.userData.item = item;
       hotspots.push(sheet);
-      anchors.push({ pos: new THREE.Vector3(x, y - h / 2 - 0.45, -7.0), title: p.sub, small: true });
+      anchors.push({ pos: new THREE.Vector3(x, y - h / 2 - 0.38, -7.0), title: p.sub, small: true });
     });
 
     /* 中间一张长桌 */
@@ -336,18 +344,18 @@ export function createRoom(THREE, id) {
       scene.add(leg);
     });
     /* 桌上的稿纸 */
-    for (let i = 0; i < 4; i++) {
-      const sheet = new THREE.Mesh(new THREE.BoxGeometry(1.1, 0.02, 1.5),
-        new THREE.MeshStandardMaterial({ color: 0xf4ecdc, roughness: 0.95 }));
-      sheet.position.set(-1.2 + i * 0.9, 1.12, 0.5 + (i % 2) * 0.25);
-      sheet.rotation.y = (i - 1.5) * 0.12;
+    const sheetMat = new THREE.MeshStandardMaterial({ color: 0xf4ecdc, roughness: 0.95 });
+    [
+      [-1.55, 0.34, 0.06, -0.10],
+      [0.05, 0.52, 0.18, 0.16],
+      [1.5, 0.30, 0.42, -0.22]
+    ].forEach(([x, z, dy, ry]) => {
+      const sheet = new THREE.Mesh(new THREE.BoxGeometry(1.0, 0.012, 1.4), sheetMat);
+      sheet.position.set(x, 1.11 + dy, z);
+      sheet.rotation.y = ry;
+      sheet.castShadow = false;
       scene.add(sheet);
-    }
-    /* 白板 */
-    const board = new THREE.Mesh(new THREE.BoxGeometry(5.2, 2.6, 0.1),
-      new THREE.MeshStandardMaterial({ color: 0xf7f4ec, roughness: 0.5 }));
-    board.position.set(0, 3.4, -7.26);
-    scene.add(board);
+    });
   }
 
   /* 浮尘，让房间有空气感 */
