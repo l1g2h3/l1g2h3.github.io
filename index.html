@@ -3,74 +3,57 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>LGH</title>
-<meta name="description" content="个人主页：阅读、词汇与一些小工具。">
+<title>模块城市 · LGH</title>
+<meta name="description" content="把主页上的模块做成一整座城市，点击建筑进入。">
 <meta name="robots" content="noindex">
-<link rel="stylesheet" href="assets/home.css">
+<link rel="stylesheet" href="city.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "./assets/vendor/three.module.min.js",
+    "three/addons/": "./assets/vendor/"
+  }
+}
+</script>
 </head>
 <body>
 
-<header class="top">
-  <div class="wrap top-in">
-    <a class="brand" href="./">
-      <span class="dot" aria-hidden="true"></span>
-      <span id="brandName">LGH</span>
-    </a>
-    <nav class="nav">
-      <a href="#work">模块</a>
-      <a href="#papers">成果</a>
-      <a href="#about">关于</a>
-      <a href="#contact">联系</a>
-      <button id="themeBtn" class="icon-btn" title="切换配色" aria-label="切换配色">◐</button>
-    </nav>
-  </div>
+<div id="scene" aria-hidden="true"></div>
+<div id="labels" aria-hidden="true"></div>
+
+<header class="hud top">
+  <a class="back" href="home/">文字版</a>
+  <div class="title">模块城市<span>点击建筑进入</span></div>
+  <button id="listBtn" class="ghost" type="button">列表模式</button>
 </header>
 
-<main class="wrap">
-
-  <section class="hero">
-    <p class="eyebrow" id="heroKicker">PERSONAL SITE</p>
-    <h1 class="hero-title" id="heroTitle">LGH</h1>
-    <p class="hero-sub" id="heroSub">在这里放一句自我介绍。</p>
-    <p class="hero-note" id="heroNote"></p>
-    <div class="hero-links" id="heroLinks"></div>
-  </section>
-
-  <section id="work" class="block">
-    <div class="block-head">
-      <h2>模块</h2>
-      <span class="block-hint">能用的和在建的</span>
-    </div>
-    <div class="grid" id="modules"></div>
-  </section>
-
-  <section id="papers" class="block">
-    <div class="block-head">
-      <h2>成果</h2>
-      <span class="block-hint">论文 · 软著 · 待补</span>
-    </div>
-    <ul class="papers" id="paperList"></ul>
-  </section>
-
-  <section id="about" class="block">
-    <div class="block-head"><h2>关于</h2></div>
-    <div class="prose" id="aboutText"></div>
-  </section>
-
-  <section id="contact" class="block">
-    <div class="block-head"><h2>联系</h2></div>
-    <ul class="links" id="contactList"></ul>
-  </section>
-
-</main>
-
-<footer class="foot">
-  <div class="wrap foot-in">
-    <span>© <span id="year">2026</span> <span id="footName">LGH</span></span>
-    <span class="foot-dim">用 GitHub Pages 托管 · <a href="https://github.com/l1g2h3/l1g2h3.github.io">源码</a></span>
+<aside id="card" class="card" hidden>
+  <div class="card-tag" id="cardTag"></div>
+  <h2 id="cardTitle"></h2>
+  <p id="cardDesc"></p>
+  <div class="card-actions">
+    <a id="cardGo" class="primary" href="#">进入</a>
+    <button id="cardClose" class="ghost" type="button">关闭</button>
   </div>
+</aside>
+
+<footer class="hud bottom">
+  <button id="playBtn" class="ghost" type="button" aria-label="暂停昼夜循环">⏸</button>
+  <input id="timeRange" type="range" min="0" max="24" step="0.01" value="17.6" aria-label="时间">
+  <output id="clock">17:36</output>
+  <button id="rotateBtn" class="ghost" type="button">自动巡游</button>
 </footer>
 
-<script src="assets/home.js"></script>
+<div id="hint" class="hint">拖动旋转 · 滚轮缩放 · 点击建筑</div>
+
+<div id="loading" class="loading"><div class="spinner"></div><span>正在建城…</span></div>
+
+<section id="fallback" class="fallback" hidden>
+  <h1>模块</h1>
+  <ul id="fallbackList"></ul>
+  <p class="fallback-note">你的浏览器没有开启 WebGL，这里用列表方式呈现同样的内容。</p>
+</section>
+
+<script type="module" src="city.js"></script>
 </body>
 </html>
