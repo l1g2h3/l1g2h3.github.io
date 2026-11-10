@@ -45,6 +45,32 @@ function plankTexture(THREE) {
   return t;
 }
 
+function bookTexture(THREE, title, color) {
+  const c = document.createElement('canvas');
+  c.width = 256; c.height = 340;
+  const g = c.getContext('2d');
+  g.fillStyle = color; g.fillRect(0, 0, 256, 340);
+  g.fillStyle = 'rgba(0,0,0,.18)';
+  g.fillRect(0, 0, 18, 340);
+  g.strokeStyle = 'rgba(255,255,255,.5)';
+  g.lineWidth = 2;
+  g.strokeRect(30, 26, 196, 288);
+  g.fillStyle = 'rgba(255,255,255,.95)';
+  g.font = 'bold 34px "Songti SC", "Noto Serif CJK SC", serif';
+  const chars = String(title).split('');
+  const per = 6;
+  chars.forEach((ch, i) => {
+    const row = Math.floor(i / per);
+    g.fillText(ch, 62 + row * 62, 96 + (i % per) * 42);
+  });
+  g.font = '16px "SFMono-Regular", monospace';
+  g.fillStyle = 'rgba(255,255,255,.6)';
+  g.fillText('CET', 34, 310);
+  const t = new THREE.CanvasTexture(c);
+  t.colorSpace = THREE.SRGBColorSpace;
+  return t;
+}
+
 function paperTexture(THREE, title, sub) {
   const c = document.createElement('canvas');
   c.width = 384; c.height = 470;
@@ -84,7 +110,7 @@ export function createRoom(THREE, id) {
   floor.receiveShadow = true;
   scene.add(floor);
 
-  const wallMat = new THREE.MeshStandardMaterial({ color: 0xded0b8, roughness: 0.95 });
+  const wallMat = new THREE.MeshStandardMaterial({ color: 0xe9dcc4, roughness: 0.95 });
   function wall(w, h, d, x, y, z) {
     const m = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), wallMat);
     m.position.set(x, y, z);
@@ -97,6 +123,23 @@ export function createRoom(THREE, id) {
   wall(0.3, 7, 15, 11, 3.5, 0);
 
 
+
+  /* 天花板 + 顶部灯槽 */
+  /* 不封顶：顶部留暗，像挑高的展厅 */
+
+  const coveMat = new THREE.MeshStandardMaterial({
+    color: 0x1a1510, emissive: new THREE.Color('#ffcf94'), emissiveIntensity: 1.1, roughness: 0.6
+  });
+  [[-9.6, 0], [9.6, 0]].forEach(([x]) => {
+    const cove = new THREE.Mesh(new THREE.BoxGeometry(0.16, 0.16, 13.4), coveMat);
+    cove.position.set(x, 6.72, 0);
+    scene.add(cove);
+  });
+  [[0, -6.4]].forEach(([, z]) => {
+    const cove = new THREE.Mesh(new THREE.BoxGeometry(20, 0.16, 0.16), coveMat);
+    cove.position.set(0, 6.72, z);
+    scene.add(cove);
+  });
 
   /* 地板踢脚线 */
   const skirtMat = new THREE.MeshStandardMaterial({ color: 0x6d543a, roughness: 0.85 });
@@ -127,6 +170,53 @@ export function createRoom(THREE, id) {
   winFrame.position.set(-10.88, 3.6, 0.5);
   scene.add(winFrame);
 
+  /* ---------- 墙面：门与挂画 ---------- */
+  const doorMat = new THREE.MeshStandardMaterial({ color: 0x5b4430, roughness: 0.8 });
+  const door = new THREE.Mesh(new THREE.BoxGeometry(2.3, 3.5, 0.18), doorMat);
+  door.position.set(-7.6, 1.75, -7.34);
+  scene.add(door);
+  const knob = new THREE.Mesh(new THREE.SphereGeometry(0.09, 10, 10),
+    new THREE.MeshStandardMaterial({ color: 0xc9a872, metalness: 0.8, roughness: 0.3 }));
+  knob.position.set(-6.7, 1.7, -7.2);
+  scene.add(knob);
+  const doorFrame = new THREE.Mesh(new THREE.BoxGeometry(2.6, 3.8, 0.1), new THREE.MeshStandardMaterial({ color: 0x3d2e20, roughness: 0.8 }));
+  doorFrame.position.set(-7.6, 1.9, -7.4);
+  scene.add(doorFrame);
+
+  const artMat = [
+    new THREE.MeshStandardMaterial({ color: 0x7c8b74, roughness: 0.9 }),
+    new THREE.MeshStandardMaterial({ color: 0x9a7f68, roughness: 0.9 }),
+    new THREE.MeshStandardMaterial({ color: 0x6f7f92, roughness: 0.9 })
+  ];
+  [[-10.83, 4.4, -3.2, 0.08], [10.83, 4.6, 2.4, -0.08]].forEach(([x, y, z, ry], i) => {
+    const frame = new THREE.Mesh(new THREE.BoxGeometry(0.1, 2.0, 3.0), new THREE.MeshStandardMaterial({ color: 0x3a2c1f, roughness: 0.8 }));
+    frame.position.set(x, y, z);
+    scene.add(frame);
+    const canvas = new THREE.Mesh(new THREE.PlaneGeometry(2.6, 1.7), artMat[i % 3]);
+    canvas.position.set(x + ry, y, z);
+    canvas.rotation.y = Math.PI / 2;
+    scene.add(canvas);
+  });
+
+  /* 挂钟 */
+  const clockBody = new THREE.Mesh(new THREE.CylinderGeometry(0.62, 0.62, 0.1, 24), new THREE.MeshStandardMaterial({ color: 0x2b221a, roughness: 0.7 }));
+  clockBody.rotation.x = Math.PI / 2;
+  clockBody.position.set(6.4, 5.2, -7.3);
+  scene.add(clockBody);
+  const clockFace = new THREE.Mesh(new THREE.CircleGeometry(0.54, 24), new THREE.MeshStandardMaterial({ color: 0xf6eddc, roughness: 0.6 }));
+  clockFace.position.set(6.4, 5.2, -7.24);
+  scene.add(clockFace);
+
+  /* 顶部灯带 */
+  const panelMat = new THREE.MeshStandardMaterial({
+    color: 0x1a1510, emissive: new THREE.Color('#ffd9a8'), emissiveIntensity: 1.35, roughness: 0.6
+  });
+  [-3.4, 0, 3.4].forEach((x) => {
+    const panel = new THREE.Mesh(new THREE.BoxGeometry(0.32, 0.06, 7.6), panelMat);
+    panel.position.set(x, 6.2, 0);
+    scene.add(panel);
+  });
+
   /* ---------- 灯光 ---------- */
   const keyLight = new THREE.DirectionalLight(0xfff0d8, 1.6);
   keyLight.position.set(6, 9, 7);
@@ -140,8 +230,8 @@ export function createRoom(THREE, id) {
   keyLight.shadow.camera.bottom = -14;
   scene.add(keyLight);
 
-  scene.add(new THREE.AmbientLight(0xffe6c8, 0.55));
-  scene.add(new THREE.HemisphereLight(0xffe7c9, 0x4a3a2a, 0.5));
+  scene.add(new THREE.AmbientLight(0xffe6c8, 0.85));
+  scene.add(new THREE.HemisphereLight(0xffe7c9, 0x4a3a2a, 0.65));
 
   const lampMat = new THREE.MeshStandardMaterial({ color: 0x2a221a, emissive: new THREE.Color('#ffd9a0'), emissiveIntensity: 1.6, roughness: 0.5 });
   [[-4.5, 1.5], [4.5, 1.5]].forEach(([x, z]) => {
@@ -172,7 +262,7 @@ export function createRoom(THREE, id) {
       ped.castShadow = true;
       scene.add(ped);
 
-      const bookMat = new THREE.MeshStandardMaterial({ color: new THREE.Color(c.color), roughness: 0.62 });
+      const bookMat = new THREE.MeshStandardMaterial({ map: bookTexture(THREE, c.title, c.color), roughness: 0.62 });
       const book = new THREE.Mesh(bookGeo, bookMat);
       book.position.set(x, 1.92, z);
       book.rotation.y = -0.28 + i * 0.06;
