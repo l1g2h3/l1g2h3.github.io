@@ -12,8 +12,8 @@ const PROFILE = {
   // 顶部的三个胶囊按钮
   links: [
     { label: 'GitHub', sub: '@l1g2h3', href: 'https://github.com/l1g2h3' },
-    { label: '3D 城市', sub: 'beta', href: 'city/' },
-    { label: '英语模块', sub: 'live', href: 'vocab/' },
+    { label: '3D 城市', sub: 'beta', href: '../' },
+    { label: '英语模块', sub: 'live', href: '../vocab/' },
     { label: '邮件', sub: '298137856@qq.com', href: 'mailto:298137856@qq.com' }
   ],
 
@@ -24,7 +24,7 @@ const PROFILE = {
       tag: 'LIVE',
       tagKind: 'live',
       desc: '按领域分组的短文阅读，点词看释义、搭配与易混辨析；划词收进生词本，复习页做翻牌自测。支持多设备云同步。',
-      href: 'vocab/',
+      href: '../vocab/',
       foot: 'HTML · 无构建 · 数据存 GitHub Gist'
     },
     {
@@ -116,7 +116,7 @@ const PROFILE = {
   contacts: [
     { label: 'GitHub', value: 'github.com/l1g2h3', href: 'https://github.com/l1g2h3' },
     { label: '邮箱', value: '298137856@qq.com', href: 'mailto:298137856@qq.com' },
-    { label: '词汇阅读本', value: 'l1g2h3.github.io/vocab/', href: 'vocab/' }
+    { label: '词汇阅读本', value: 'l1g2h3.github.io/vocab/', href: '../vocab/' }
   ]
 };
 
