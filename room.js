@@ -14,12 +14,36 @@ const COURSES = [
 ];
 
 const PAPERS = [
-  { title: '2025 国赛', sub: 'NIPT 时点选择', href: 'media/modeling/25-guosai.pdf' },
-  { title: '2025 校赛 A', sub: '输尿管流量—压降', href: 'media/modeling/25-guosai-school-a.pdf' },
-  { title: '2026 国赛', sub: '微网购电策略', href: 'media/modeling/26-guosai.pdf' },
-  { title: '2026 校赛', sub: '电池快充与寿命', href: 'media/modeling/26-guosai-school.pdf' },
-  { title: '2026 美赛 D', sub: 'WNBA 球队经营', href: 'media/modeling/26-meisai.pdf' },
-  { title: '2026 校赛 A', sub: '污染物跨尺度输运', href: 'media/modeling/26-meisai-school.pdf' }
+  {
+    title: '2025 国赛', sub: 'NIPT 时点选择',
+    href: 'media/modeling/25-guosai.pdf',
+    desc: '用 Gamma 分布回归刻画胎儿 Y 染色体浓度与孕周、BMI 的关系，再按 BMI 分组做风险优化，给出无创产前检测的建议时点与异常判定。48 页。'
+  },
+  {
+    title: '2025 校赛 A', sub: '输尿管流量—压降',
+    href: 'media/modeling/25-guosai-school-a.pdf',
+    desc: '把巨大肾积水的输尿管流量—压降关系做成灰箱模型：泊肃叶定律加修正项，再与 SVR、LightGBM、Lasso、PLS 四种回归对比。36 页。'
+  },
+  {
+    title: '2026 国赛', sub: '微网购电策略',
+    href: 'media/modeling/26-guosai.pdf',
+    desc: '微网一天 144 个时段的购电规划：日前时序预测加日内滚动随机优化，在光伏波动和五倍紧急电价下压低总成本。27 页。'
+  },
+  {
+    title: '2026 校赛', sub: '电池快充与寿命',
+    href: 'media/modeling/26-guosai-school.pdf',
+    desc: '锂电池快充策略与循环寿命：72 种策略的衰减归因，用前 100 圈数据预测寿命，最后做充电时间与寿命的权衡。32 页。'
+  },
+  {
+    title: '2026 美赛 D', sub: 'WNBA 球队经营',
+    href: 'media/modeling/26-meisai.pdf',
+    desc: '以 WNBA 印第安纳狂热队为例，用内—外环决策框架把竞技表现和商业收益放进同一套优化，回答「该花多少钱、花在哪」。30 页。'
+  },
+  {
+    title: '2026 校赛 A', sub: '污染物跨尺度输运',
+    href: 'media/modeling/26-meisai-school.pdf',
+    desc: '城市污染物跨尺度输运：分段耦合高斯烟羽加对流扩散，算出室外浓度如何传到室内分布。30 页。'
+  }
 ];
 
 function plankTexture(THREE) {
@@ -327,7 +351,10 @@ export function createRoom(THREE, id) {
       frame.position.set(x, y, -7.36);
       scene.add(frame);
 
-      const item = { kind: 'paper', title: p.title + ' · ' + p.sub, note: '点开看论文原文件', href: p.href };
+      const item = {
+        kind: 'paper', tag: p.title, title: p.sub, desc: p.desc,
+        href: p.href, hrefText: '打开论文 PDF'
+      };
       sheet.userData.item = item;
       hotspots.push(sheet);
       anchors.push({ pos: new THREE.Vector3(x, y - h / 2 - 0.38, -7.0), title: p.sub, small: true });
