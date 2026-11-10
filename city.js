@@ -984,6 +984,7 @@ function boot() {
         const el = document.createElement('div');
         el.className = 'label room';
         el.innerHTML = '<b>' + a.title + '</b>';
+        el.style.display = qr ? '' : 'none';
         labelHost.appendChild(el);
         return { el, pos: a.pos };
       });
@@ -993,10 +994,11 @@ function boot() {
     closeCard();
     selected = null;
     hovered = null;
-    buildings.forEach((b) => { b.el.style.opacity = '0'; });
-    peds.forEach((x) => { x.el.style.opacity = '0'; });
-    camera.position.set(0, 3.9, 12.2);
-    controls.target.set(0, 2.3, 0);
+    buildings.forEach((b) => { b.el.style.display = 'none'; });
+    peds.forEach((x) => { x.el.style.display = 'none'; });
+    room.labels.forEach((l) => { l.el.style.display = ''; });
+    camera.position.set(0, 3.2, 9.6);
+    controls.target.set(0, 2.9, -2.5);
     controls.minDistance = 5;
     controls.maxDistance = 15;
     controls.maxPolarAngle = Math.PI * 0.54;
@@ -1016,8 +1018,9 @@ function boot() {
     controls.minDistance = 20;
     controls.maxDistance = 150;
     controls.maxPolarAngle = Math.PI * 0.487;
-    buildings.forEach((b) => { b.el.style.opacity = '0.72'; });
-    peds.forEach((x) => { x.el.style.opacity = '0.55'; });
+    buildings.forEach((b) => { b.el.style.display = ''; });
+    peds.forEach((x) => { x.el.style.display = ''; });
+    if (room) room.labels.forEach((l) => { l.el.style.display = 'none'; });
     if (exitBtn) exitBtn.hidden = true;
     if (bottomBar) bottomBar.style.display = '';
     if (hintEl) hintEl.textContent = '拖动旋转 · 滚轮缩放 · 点击建筑';
