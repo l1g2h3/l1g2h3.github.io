@@ -15,23 +15,38 @@ const MODULES = [
   },
   {
     id: 'modeling', title: '数学建模竞赛', tag: '论文',
-    desc: '赛题重述、模型假设、求解与灵敏度分析的完整论文归档，按年份整理。',
-    href: 'home/#papers', status: 'live'
+    desc: '2025 到 2026 的国赛、美赛与校赛论文，六篇完整归档。',
+    href: 'work/?m=modeling', status: 'live'
   },
   {
     id: 'neuro', title: '类脑强化学习', tag: '软著',
-    desc: '脉冲神经网络与强化学习结合的方向：稀疏编码、时序信用分配、训练框架实验记录，附一项软件著作权登记。',
-    href: 'home/#papers', status: 'live'
+    desc: 'PPO 与自注意力机制结合的 Pong 智能体，附软件著作权登记证书与说明书。',
+    href: 'work/?m=rl', status: 'live'
   },
   {
     id: 'ct', title: 'CT 协议 DSA 路径规划', tag: '系统',
-    desc: 'CT 引导下 DSA 扫描的路径规划：血管分割、入路约束建模与路径代价优化。',
-    href: 'home/#papers', status: 'live'
+    desc: '低剂量介入下的 CT-DSA 虚实联动路径仿真与智能寻角控制。',
+    href: 'work/?m=dsa', status: 'live'
   },
   {
     id: 'surgery', title: '手术机器人', tag: '模块',
     desc: '机构与控制模块：运动学建模、主从控制、精度验证实验的记录与拆解。',
-    href: 'home/#papers', status: 'live'
+    href: 'work/?m=surgery', status: 'soon'
+  },
+  {
+    id: 'car', title: '智能车', tag: '作品',
+    desc: '摄像头循迹的履带小车：二值化找线、中线提取、PID 打角。',
+    href: 'work/?m=car', status: 'live'
+  },
+  {
+    id: 'lab', title: '一些有趣的实验', tag: '动手',
+    desc: '3D 打印、激光雕刻、光固化。做出来之后通常会发现：能，但要花三倍时间。',
+    href: 'work/?m=lab', status: 'live'
+  },
+  {
+    id: 'course', title: '课程相关', tag: '课程',
+    desc: '课程作业、实验报告和笔记，整理中。',
+    href: 'work/?m=course', status: 'soon'
   },
   {
     id: 'notes', title: '读书笔记', tag: 'SOON',
@@ -41,7 +56,7 @@ const MODULES = [
 ];
 
 const NS = MODULES.length;
-const RADIUS = 24;
+const RADIUS = 27;
 const START_HOUR = 16.2;
 
 /* ---------------- 小工具 ---------------- */
@@ -115,14 +130,14 @@ function boot() {
   const lampMats = [];
   const lampLights = [];
   const camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 0.1, 600);
-  camera.position.set(26, 20, 60);
+  camera.position.set(32, 30, 80);
 
   const controls = new OrbitControls(camera, renderer.domElement);
   controls.target.set(0, 8, 0);
   controls.enableDamping = true;
   controls.dampingFactor = 0.07;
   controls.minDistance = 20;
-  controls.maxDistance = 120;
+  controls.maxDistance = 150;
   controls.maxPolarAngle = Math.PI * 0.487;
   controls.enablePan = false;
   controls.zoomSpeed = 0.8;
@@ -515,9 +530,92 @@ function boot() {
     return g;
   }
 
+  function buildCar() {
+    const g = new THREE.Group();
+    const mat = facadeMaterial({ base: '#cfc0a4', glass: '#3f5563', cols: 6, rows: 3, lit: 0.5, seed: 77 });
+    g.add(mesh(new THREE.BoxGeometry(12, 1, 9), stoneMat, 0, 0.5, 0));
+    g.add(mesh(new THREE.BoxGeometry(10.4, 3.4, 6.4), mat, 0, 2.7, 0));
+    g.add(mesh(new THREE.BoxGeometry(10.8, 0.35, 6.8), stoneDark, 0, 4.6, 0));
+
+    /* 车库门 */
+    const doorMat = new THREE.MeshStandardMaterial({ color: 0x6a6255, roughness: 0.8, metalness: 0.2 });
+    g.add(mesh(new THREE.BoxGeometry(4.6, 2.4, 0.2), doorMat, 0, 2.2, 3.3));
+
+    /* 小车 */
+    const car = new THREE.Group();
+    const bodyMat = new THREE.MeshStandardMaterial({ color: 0xb4462f, roughness: 0.5, metalness: 0.3 });
+    car.add(mesh(new THREE.BoxGeometry(2.8, 0.7, 1.5), bodyMat, 0, 0.62, 0));
+    car.add(mesh(new THREE.BoxGeometry(1.4, 0.5, 1.3), new THREE.MeshStandardMaterial({ color: 0x2b3a44, roughness: 0.3, metalness: 0.5 }), -0.15, 1.15, 0));
+    const wheelGeo = new THREE.CylinderGeometry(0.34, 0.34, 0.26, 12);
+    const wheelMat = new THREE.MeshStandardMaterial({ color: 0x1d1f22, roughness: 0.9 });
+    [[-0.95, 0.8], [0.95, 0.8], [-0.95, -0.8], [0.95, -0.8]].forEach(function (xz) {
+      const w = mesh(wheelGeo, wheelMat, xz[0], 0.34, xz[1]);
+      w.rotation.x = Math.PI / 2;
+      car.add(w);
+    });
+    car.position.set(-1.2, 0, 6.4);
+    car.rotation.y = -0.3;
+    g.add(car);
+    g.userData.car = car;
+
+    /* 赛道弧线 */
+    const track = mesh(new THREE.TorusGeometry(7.2, 0.32, 8, 48, Math.PI * 1.4), new THREE.MeshStandardMaterial({ color: 0x3f3a33, roughness: 1 }), 0, 0.08, 0, { cast: false });
+    track.rotation.x = Math.PI / 2;
+    track.rotation.z = -0.5;
+    g.add(track);
+    return g;
+  }
+
+  function buildLab() {
+    const g = new THREE.Group();
+    const mat = facadeMaterial({ base: '#cdbfa8', glass: '#39525c', cols: 4, rows: 4, lit: 0.72, seed: 88 });
+    g.add(mesh(new THREE.BoxGeometry(9, 1, 9), stoneMat, 0, 0.5, 0));
+    g.add(mesh(new THREE.BoxGeometry(7.6, 5.2, 7.6), mat, 0, 3.6, 0));
+    g.add(mesh(new THREE.BoxGeometry(8, 0.4, 8), stoneDark, 0, 6.4, 0));
+
+    /* 屋顶龙门架 */
+    g.add(mesh(new THREE.BoxGeometry(6.4, 0.26, 0.26), metalMat, 0, 8, 0));
+    g.add(mesh(new THREE.BoxGeometry(0.26, 1.6, 0.26), metalMat, -3, 7.2, 0));
+    g.add(mesh(new THREE.BoxGeometry(0.26, 1.6, 0.26), metalMat, 3, 7.2, 0));
+    g.add(mesh(new THREE.BoxGeometry(0.7, 0.7, 0.9), metalMat, 0, 7.4, 0));
+
+    /* 烟囱与灯带 */
+    g.add(mesh(new THREE.CylinderGeometry(0.42, 0.5, 3, 10), stoneDark, 2.9, 7.9, -2.6));
+    const strip = mesh(new THREE.BoxGeometry(0.14, 0.14, 6.6), glowMat('#9fe6d0', 0.8), 3.86, 3.4, 0, { cast: false });
+    emissiveParts.push({ mat: strip.material, max: 2 });
+    g.add(strip);
+
+    /* 门口实验台 */
+    g.add(mesh(new THREE.BoxGeometry(2.6, 0.14, 1.4), stoneDark, 0, 1.05, 4.5));
+    return g;
+  }
+
+  function buildCourse() {
+    const g = new THREE.Group();
+    const mat = facadeMaterial({ base: '#d6c8ae', glass: '#43585f', cols: 7, rows: 4, lit: 0.45, seed: 99 });
+    g.add(mesh(new THREE.BoxGeometry(11, 1, 8), stoneMat, 0, 0.5, 0));
+    g.add(mesh(new THREE.BoxGeometry(9.6, 5.4, 6.6), mat, 0, 3.7, 0));
+    g.add(mesh(new THREE.BoxGeometry(10, 0.4, 7), stoneDark, 0, 6.6, 0));
+
+    /* 钟楼 */
+    g.add(mesh(new THREE.BoxGeometry(2.6, 9, 2.6), mat, -3.4, 5.5, 0));
+    g.add(mesh(new THREE.BoxGeometry(3, 0.4, 3), stoneDark, -3.4, 10.2, 0));
+    const roof = mesh(new THREE.CylinderGeometry(0, 2.2, 2.4, 4), stoneDark, -3.4, 11.6, 0);
+    roof.rotation.y = Math.PI / 4;
+    g.add(roof);
+
+    /* 钟面 */
+    const face = new THREE.Mesh(new THREE.CircleGeometry(0.72, 24), glowMat('#ffe3b0', 0.9));
+    face.position.set(-3.4, 8.4, 1.33);
+    emissiveParts.push({ mat: face.material, max: 1.6 });
+    g.add(face);
+    return g;
+  }
+
   const builders = {
     english: buildEnglish, modeling: buildModeling, neuro: buildNeuro,
-    ct: buildCT, surgery: buildSurgery, notes: buildNotes
+    ct: buildCT, surgery: buildSurgery, car: buildCar, lab: buildLab,
+    course: buildCourse, notes: buildNotes
   };
 
   const buildings = [];
@@ -546,7 +644,7 @@ function boot() {
     const top = new THREE.Box3().setFromObject(g).max.y;
     buildings.push({
       mod, group: g,
-      anchor: new THREE.Vector3(x, top + 2.6, z),
+      anchor: new THREE.Vector3(x, top + 2.6 + (i % 3) * 1.9, z),
       focus: new THREE.Vector3(x * 0.55, 5.5, z * 0.55)
     });
   });
@@ -778,7 +876,7 @@ function boot() {
   const tmpV = new THREE.Vector3();
   let intro = 0;
   const introFrom = camera.position.clone();
-  const introTo = new THREE.Vector3(0, 18, 62);
+  const introTo = new THREE.Vector3(0, 23, 76);
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduced) intro = 1;
 
