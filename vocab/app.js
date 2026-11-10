@@ -1,5 +1,5 @@
 /* =========================================================
-   六级词汇阅读本 — 交互逻辑
+   英语阅读本 — 交互逻辑
    ========================================================= */
 (function () {
   'use strict';
@@ -245,9 +245,9 @@
     app.innerHTML = '' +
       '<section class="hero">' +
       '<div>' +
-      '<div class="eyebrow">CET-6 · 语境记词</div>' +
+      '<div class="eyebrow">ENGLISH · 语境记词</div>' +
       '<h1 class="hero-title">读一篇短文，记住<em>一批词</em></h1>' +
-      '<p class="hero-sub">每个词都在六级体裁的篇章里出现过，读的时候能看见它怎么用，复习的时候能回到那句话。</p>' +
+      '<p class="hero-sub">每个词都在英语篇章里出现过，读的时候能看见它怎么用，复习的时候能回到那句话。</p>' +
       '</div>' +
       '<div class="stats">' +
       '<div class="stat"><b>' + bs.length + '</b><span>批次</span></div>' +
@@ -374,7 +374,7 @@
       '<div class="page-head">' +
       '<div class="eyebrow">领域词汇</div>' +
       '<h1 class="page-title">各领域的常用说法</h1>' +
-      '<p class="page-sub">六级阅读常在这几个领域出题。点卡片复制英文，写作、翻译可以直接用。</p>' +
+      '<p class="page-sub">英语阅读常在这几个领域出题。点卡片复制英文，写作、翻译可以直接用。</p>' +
       '</div>' +
       '<div class="filters">' + tabs + '</div>' +
       (items.length
@@ -623,7 +623,7 @@
       id: 'b99',
       title: 'Your Next Passage',
       titleZh: '你的下一篇短文',
-      genre: '六级说明文',
+      genre: '说明文',
       date: new Date().toISOString().slice(0, 10),
       paragraphs: [
         {
