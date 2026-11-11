@@ -68,12 +68,12 @@ const PROFILE = {
       foot: 'PLA · 椴木 · 光敏树脂'
     },
     {
-      title: '课程相关',
-      tag: '课程',
-      tagKind: 'soon',
-      desc: '课程作业、实验报告和笔记，还在整理。',
+      title: '随便学学',
+      tag: '笔记',
+      tagKind: 'plain',
+      desc: '课程、论文、教程，看到哪儿记到哪儿。最近在弄扩散模型：去噪、U-Net、条件注入。',
       href: 'work/?m=course',
-      foot: '整理中'
+      foot: '笔记 · 持续更新'
     },
     {
       title: '手术机器人',
