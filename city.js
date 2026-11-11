@@ -5,7 +5,7 @@
    ========================================================= */
 import * as THREE from 'three';
 import { OrbitControls } from './assets/vendor/OrbitControls.js';
-import { createRoom } from './room.js?v=bmwak0w1w';
+import { createRoom } from './room.js?v=bmwbw33vx';
 
 /* ---------------- 模块定义 ---------------- */
 const MODULES = [
@@ -45,8 +45,8 @@ const MODULES = [
     href: 'work/?m=lab', status: 'live'
   },
   {
-    id: 'course', title: '课程相关', tag: '课程',
-    desc: '课程作业、实验报告和笔记，整理中。',
+    id: 'course', title: '随便学学', tag: '笔记',
+    desc: '课程、论文、教程的笔记，最近在整理扩散模型。',
     href: 'work/?m=course', status: 'soon'
   },
   {
