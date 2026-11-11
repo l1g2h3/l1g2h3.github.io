@@ -161,12 +161,34 @@ const WORK = {
   },
 
   course: {
-    title: '课程相关',
-    tag: '课程',
-    year: '',
-    lead: '课程作业、实验报告和笔记，整理中。',
-    meta: [['状态', '整理中']],
-    body: [],
-    items: []
+    title: '随便学学',
+    tag: '笔记',
+    year: '2025 — 2026',
+    lead: '课程、论文、教程，看到哪儿记到哪儿。最近弄明白的是扩散模型。',
+    meta: [
+      ['状态', '持续更新'],
+      ['最近', 'Stable Diffusion'],
+      ['形式', '笔记 + 图 + 原论文链接']
+    ],
+    body: [
+      '稳定扩散（Stable Diffusion）不直接画图，而是在潜空间里一步步“擦掉”噪声：从一张纯高斯噪声出发，重复调用同一个去噪网络几十次，最后用 VAE 解码成图像。',
+      '为什么去噪而不是一步出图？一步生成（GAN、VAE）当然存在。扩散赢在训练目标极其稳定——就是预测噪声的 MSE，没有对抗博弈；而且多步采样让模型有机会纠错。代价是慢，所以后来才有 LCM、SDXL-Turbo 这类蒸馏到 1–4 步的版本。',
+      '它也不是自回归。自回归按数据维度分解 p(x) = ∏ p(x_i | x_<i)，逐个 token 生成；扩散按噪声强度分解，每一步同时更新整张图。我一开始把它类比成 boosting，其实不对——是同一个网络靠 timestep 条件区分噪声水平，不是多个弱学习器叠加。',
+      'U-Net 是骨架：潜变量走卷积主干上下采样；时间步 t 通过 AdaGN 注入每一个 ResBlock；文本 77×768 的 token 序列通过 cross-attention 注入每一个 Transformer 块（Q 来自图像，K/V 来自文本）。三条路径并行，而不是拼成一个向量。',
+      '训练时输入不是原图 latent：先 VAE 编码得到 z₀，随机采时间步 t 和噪声 ε，构造 z_t = √ᾱ_t·z₀ + √(1−ᾱ_t)·ε，让网络从 z_t 预测 ε，损失是两者的 MSE；文本有 10% 概率被置空，用来训练无条件分支（CFG）。',
+      '几个容易记错的点：去噪每一步用的是同一个模型，不是按次序训多个；最终解码器是 VAE 的卷积解码器，也是神经网络；SD 1.5 的潜变量是 4×64×64，SDXL 是 4×128×128，SD3 换成了 16 通道 VAE 和纯 Transformer 的 MMDiT。'
+    ],
+    items: [
+      {
+        type: 'figure', src: 'media/study/sd-arch.jpg',
+        title: 'Stable Diffusion 架构（论文原图）',
+        note: 'Pixel Space ↔ Latent Space；文本经 cross-attention 注入 U-Net。Rombach et al., 2022'
+      },
+      {
+        type: 'file', src: 'https://arxiv.org/abs/2112.10752',
+        title: 'High-Resolution Image Synthesis with Latent Diffusion Models',
+        note: '外部链接 · arXiv:2112.10752', desc: '原始论文，架构图就出自这里。'
+      }
+    ]
   }
 };
