@@ -5,7 +5,7 @@
    ========================================================= */
 import * as THREE from 'three';
 import { OrbitControls } from './assets/vendor/OrbitControls.js';
-import { createRoom } from './room.js?v=bmwbw33vx';
+import { createRoom } from './room.js?v=bmwbxvnjd';
 
 /* ---------------- 模块定义 ---------------- */
 const MODULES = [
