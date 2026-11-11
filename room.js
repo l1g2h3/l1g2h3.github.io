@@ -329,6 +329,94 @@ export function createRoom(THREE, id) {
       leaf.rotation.z = (i - 2) * 0.14;
       scene.add(leaf);
     }
+
+    /* ---------- 书桌、台灯、椅子、书架 ---------- */
+    const woodMat = new THREE.MeshStandardMaterial({ color: 0x8a6746, roughness: 0.8 });
+    const woodDark = new THREE.MeshStandardMaterial({ color: 0x6a4f36, roughness: 0.85 });
+    const paperMat = new THREE.MeshStandardMaterial({ color: 0xf4ecdc, roughness: 0.95 });
+    const metalMat2 = new THREE.MeshStandardMaterial({ color: 0x9aa3a8, metalness: 0.75, roughness: 0.35 });
+
+    const DK = -4.3, DZ = 0.4;
+
+    /* 桌子 */
+    const deskMesh = new THREE.Mesh(new THREE.BoxGeometry(4.0, 0.14, 1.8), woodMat);
+    deskMesh.position.set(DK, 1.0, DZ);
+    deskMesh.castShadow = true;
+    deskMesh.receiveShadow = true;
+    scene.add(deskMesh);
+    [[-1.75, -0.7], [1.75, -0.7], [-1.75, 0.7], [1.75, 0.7]].forEach(([dx, dz]) => {
+      const leg = new THREE.Mesh(new THREE.BoxGeometry(0.14, 1.0, 0.14), woodDark);
+      leg.position.set(DK + dx, 0.5, DZ + dz);
+      leg.castShadow = true;
+      scene.add(leg);
+    });
+
+    /* 摊开的书 */
+    [[-0.5, 0.16], [0.5, -0.16]].forEach(([dx, rz]) => {
+      const page = new THREE.Mesh(new THREE.BoxGeometry(0.9, 0.035, 1.2), paperMat);
+      page.position.set(DK + dx, 1.09, DZ + 0.15);
+      page.rotation.z = rz;
+      page.castShadow = true;
+      scene.add(page);
+    });
+
+    /* 台灯 */
+    const base = new THREE.Mesh(new THREE.CylinderGeometry(0.2, 0.24, 0.07, 18), metalMat2);
+    base.position.set(DK - 1.35, 1.11, DZ - 0.3);
+    scene.add(base);
+    const stem = new THREE.Mesh(new THREE.CylinderGeometry(0.028, 0.028, 0.95, 8), metalMat2);
+    stem.position.set(DK - 1.35, 1.6, DZ - 0.3);
+    scene.add(stem);
+    const shadeMat2 = new THREE.MeshStandardMaterial({
+      color: 0x2a221a, emissive: new THREE.Color('#ffd9a0'), emissiveIntensity: 1.9,
+      roughness: 0.5, side: THREE.DoubleSide
+    });
+    const shade2 = new THREE.Mesh(new THREE.CylinderGeometry(0.17, 0.36, 0.34, 20, 1, true), shadeMat2);
+    shade2.position.set(DK - 1.35, 2.1, DZ - 0.3);
+    scene.add(shade2);
+    const lampGlow = new THREE.PointLight(0xffd9a0, 9, 7, 2);
+    lampGlow.position.set(DK - 1.35, 1.95, DZ - 0.3);
+    scene.add(lampGlow);
+
+    /* 椅子 */
+    const seat = new THREE.Mesh(new THREE.BoxGeometry(1.15, 0.12, 1.15), woodMat);
+    seat.position.set(DK, 0.56, DZ + 2.0);
+    seat.castShadow = true;
+    scene.add(seat);
+    [[-0.45, -0.45], [0.45, -0.45], [-0.45, 0.45], [0.45, 0.45]].forEach(([dx, dz]) => {
+      const leg = new THREE.Mesh(new THREE.BoxGeometry(0.11, 0.56, 0.11), woodDark);
+      leg.position.set(DK + dx, 0.28, DZ + 2.0 + dz);
+      leg.castShadow = true;
+      scene.add(leg);
+    });
+    const back = new THREE.Mesh(new THREE.BoxGeometry(1.15, 0.9, 0.1), woodMat);
+    back.position.set(DK, 1.05, DZ + 2.53);
+    back.castShadow = true;
+    scene.add(back);
+
+    /* 靠后墙的书架 */
+    const SX = 6.6, SZ = -7.15;
+    const shelfFrame = new THREE.Mesh(new THREE.BoxGeometry(2.7, 2.7, 0.44), woodDark);
+    shelfFrame.position.set(SX, 1.35, SZ);
+    shelfFrame.castShadow = true;
+    scene.add(shelfFrame);
+    for (let i = 0; i < 4; i++) {
+      const board = new THREE.Mesh(new THREE.BoxGeometry(2.5, 0.07, 0.4), woodMat);
+      board.position.set(SX, 0.36 + i * 0.64, SZ + 0.04);
+      scene.add(board);
+    }
+    const spineColors = ['#7f9c8a', '#a8785c', '#6f88a8', '#9a7fa0', '#a8975c', '#7f8f9c'];
+    for (let row = 0; row < 3; row++) {
+      for (let b = 0; b < 6; b++) {
+        const spine = new THREE.Mesh(
+          new THREE.BoxGeometry(0.12, 0.46 + (b % 3) * 0.06, 0.26),
+          new THREE.MeshStandardMaterial({ color: new THREE.Color(spineColors[(row + b) % 6]), roughness: 0.85 })
+        );
+        spine.position.set(SX - 0.92 + b * 0.37, 0.66 + row * 0.64, SZ + 0.13);
+        spine.castShadow = true;
+        scene.add(spine);
+      }
+    }
   } else {
     /* 数学建模：六篇论文挂墙上 */
     const frameMat = new THREE.MeshStandardMaterial({ color: 0x4a3a28, roughness: 0.75 });
