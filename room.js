@@ -10,7 +10,8 @@ const COURSES = [
   { title: '自动控制原理', note: '专业基础', color: '#6f88a8' },
   { title: '机器学习', note: '选修', color: '#9a7fa0' },
   { title: '生物医学工程导论', note: '导论', color: '#a8975c' },
-  { title: '电路分析', note: '专业基础', color: '#7f8f9c' }
+  { title: '电路分析', note: '专业基础', color: '#7f8f9c' },
+  { title: 'Stable Diffusion', note: '扩散模型笔记', color: '#6f7f95' }
 ];
 
 const PAPERS = [
@@ -287,7 +288,7 @@ export function createRoom(THREE, id) {
     COURSES.forEach((c, i) => {
       const col = i % 3, row = Math.floor(i / 3);
       const x = -6 + col * 6;
-      const z = -4 + row * 5;
+      const z = -5.2 + row * 3.6;
 
       const ped = new THREE.Mesh(new THREE.CylinderGeometry(0.52, 0.62, 1.1, 18), pedestalMat);
       ped.position.set(x, 0.55, z);
