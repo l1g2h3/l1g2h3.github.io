@@ -56,7 +56,15 @@
     const items = m.items || [];
     const images = items.filter((i) => i.type === 'image');
     const videos = items.filter((i) => i.type === 'video');
+    const figures = items.filter((i) => i.type === 'figure');
     const files = items.filter((i) => i.type === 'file');
+
+    const figureBlock = figures.length
+      ? '<section class="block"><h2>图</h2>' + figures.map((it) =>
+          '<figure class="fig"><img src="' + esc(asset(it.src)) + '" alt="' + esc(it.title || '') + '" loading="lazy">' +
+          '<figcaption><b>' + esc(it.title || '') + '</b>' +
+          (it.note ? '<span>' + esc(it.note) + '</span>' : '') + '</figcaption></figure>').join('') + '</section>'
+      : '';
 
     const gallery = images.length
       ? '<section class="block"><h2>照片</h2><div class="gallery">' + images.map((it, i) =>
@@ -102,7 +110,7 @@
         '<div><dt>' + esc(x[0]) + '</dt><dd>' + esc(x[1]) + '</dd></div>').join('') + '</dl>' : '') +
       '</div>' +
       (m.body && m.body.length ? '<section class="block prose">' + m.body.map((p) => '<p>' + esc(p) + '</p>').join('') + '</section>' : '') +
-      gallery + videoBlock + fileBlock + empty + nav +
+      figureBlock + gallery + videoBlock + fileBlock + empty + nav +
       '<p class="back"><a href="../">← 回到城市</a></p>';
 
     /* 灯箱 */
