@@ -10,7 +10,7 @@ window.VOCAB = {
   meta: {
     title: "英语阅读本",
     subtitle: "English Reader",
-    updated: "2026-11-10"
+    updated: "2026-11-11"
   },
 
   /* 领域划分：每篇短文归到一个领域，页面上可以按领域筛选 */
@@ -238,6 +238,70 @@ window.VOCAB = {
         { lemma: "relocate", pos: "v.", ipa: "/ˌriːləʊˈkeɪt/", meaning: "迁移；重新安置", inText: "把试验迁到更干旱的地方", collocation: "relocate to…；relocate staff", diff: "名词 relocation。re-（再）+ locate（安置）。" },
         { lemma: "exaggerate", pos: "v.", ipa: "/ɪɡˈzædʒəreɪt/", meaning: "夸大", inText: "热情有时会夸大收益", collocation: "exaggerate the benefits / importance", diff: "名词 exaggeration，形容词 exaggerated（夸张的）。" },
         { lemma: "transcend", pos: "v.", ipa: "/trænˈsend/", meaning: "超越；超出（范围）", inText: "超越农业本身", collocation: "transcend boundaries / differences", diff: "名词 transcendence。trans-（越过）+ scandere（攀登），画面是“翻过去”。" }
+      ]
+    },
+
+    {
+      id: "b03",
+      title: "After the Storm, the Marsh",
+      titleZh: "风暴之后，湿地",
+      genre: "六级说明文",
+      field: "climate",
+      date: "2026-11-11",
+      note: "飓风过后的海岸修复：湿地、买断与重建。气候类阅读常用场景，23 个词串在同一条线索上。",
+
+      paragraphs: [
+        {
+          en: "When the [[hurricane]] came ashore, the town learned in a single night what its engineers had been saying for years. The barrier beach had been [[retreating|retreat]] by a metre a decade, its sediment supply [[depleted|deplete]] by dams upstream, and the low ground behind it — a retail park, a [[warehouse]], a row of [[retailers|retailer]], a [[segment]] of the coast road — stood exactly where the surge wanted to go. The damage was not evenly spread. Properties behind an intact marsh lost far less than those behind a sea wall, and by the third week the town's reserve fund was close to [[exhaustion]].",
+          zh: "飓风登陆那一夜，小镇一夜之间明白了工程师们说了多年的话。障壁海滩一直以每十年一米的速度**后退**，上游水坝截走了泥沙，沙源日渐**枯竭**；它身后的低地——一个零售园区、一座**仓库**、一排**零售商**、一段海岸公路——恰好位于风暴增水要去的地方。损失并不均匀：完好湿地后面的房产，损失远小于海堤后面的房产；到第三周，镇上的储备金已经接近**耗尽**。"
+        },
+        {
+          en: "Ecologists had argued for a decade that the marsh mattered. Their working [[hypothesis]] was simple: a wide band of reeds and mud flats absorbs wave energy that a wall merely deflects. It was an awkward claim to [[verify]], because no two storms arrive the same way; the best evidence came from models that ran the same [[scenario]] with and without the marsh. When federal [[stimulus]] money finally arrived, the county chose to [[leverage]] it into land acquisition rather than concrete, and to most residents the result was a [[glimpse]] of what a coastline might look like if it were allowed to move.",
+          zh: "生态学家十年来一直主张，湿地是有用的。他们的工作**假说**很简单：宽阔的芦苇带和泥滩能吸收波浪能量，而海堤只是把能量弹开。这个说法很难**验证**，因为没有两次风暴以同样方式到来；最好的证据来自模型——在同一个**情景**下分别保留和移除湿地。联邦**刺激**资金终于到位时，县里选择用它**撬动**土地收购，而不是浇筑混凝土；对多数居民来说，这让他们**瞥见**了一种可能：如果海岸被允许移动，它会是什么样子。"
+        },
+        {
+          en: "Restoration, however, is a test of local [[democracy]] as much as of ecology. The [[justification]] for buying out waterfront owners was straightforward — the state could not insure what it could not defend — yet the [[stigma]] attached to accepting the offer kept some families away for years. Land [[tenure]] complicated every file: some parcels had been in the same family for four generations and had no clear title. Officials learned to trade on the [[prestige]] of a national designation, and [[enrollment]] in the buyout scheme rose once a neighbour had signed.",
+          zh: "然而，修复既是生态问题，也是对地方**民主**的考验。收购滨水业主房产的**理由**很直白——州政府无法为它守不住的东西承保——但接受这笔钱所带的**污名**，让一些家庭多年不愿点头。土地**权属**让每一份档案都变得复杂：有些地块在同一家族手里传了四代，却没有清晰的产权。官员们学会借国家命名的**声望**做工作，而一旦有邻居签了字，买断方案的**报名**人数就上来了。"
+        },
+        {
+          en: "The marsh, meanwhile, did what marshes do. Within two seasons the [[predators|predator]] returned — herons, otters, a pair of ospreys — and the recovery looked less like engineering than like a quiet [[resurrection]]. A field [[expedition]] from the university now measures the mud each spring; the students' numbers are unglamorous and, so far, encouraging. The harder question is one of [[rationality]]: knowing what the town now knows, is it reasonable to rebuild in the same place, and who should pay for the answer?",
+          zh: "与此同时，湿地做了湿地该做的事。两个季节之内，**捕食者**回来了——苍鹭、水獭、一对鱼鹰——这场恢复看起来不太像工程，更像一次安静的**复活**。大学的野外**考察**队现在每年春天测量泥滩；学生们的数据并不好看，但至今是令人鼓舞的。更难的问题关乎**合理性**：既然知道了现在知道的事，在原地重建还说得过去吗？又该由谁来为这个答案付账？"
+        }
+      ],
+
+      focus: [
+        "a worst-case scenario",
+        "deplete resources",
+        "catch a glimpse of",
+        "leverage sth into",
+        "the justification for",
+        "the stigma attached to"
+      ],
+
+      words: [
+        { lemma: "verify", pos: "v.", ipa: "/ˈverɪfaɪ/", meaning: "核实；证明；验证", inText: "验证（这个假说）", collocation: "verify that…；verify the data / a claim", diff: "名词 verification。比 confirm 更强调“查证过程”，新闻和学术里常用。" },
+        { lemma: "deplete", pos: "v.", ipa: "/dɪˈpliːt/", meaning: "耗尽；使枯竭", inText: "沙源枯竭", collocation: "deplete resources / stocks / the ozone layer", diff: "名词 depletion。比 use up 正式，多用于自然资源、储备。" },
+        { lemma: "glimpse", pos: "n./v.", ipa: "/ɡlɪmps/", meaning: "一瞥；瞥见", inText: "瞥见海岸的另一种可能", collocation: "catch a glimpse of；a glimpse into", diff: "与 glance 区别：glance 是“看一眼”的动作，glimpse 强调“看到的瞬间”，常带“难得一见”的意味。" },
+        { lemma: "scenario", pos: "n.", ipa: "/səˈnɑːriəʊ/", meaning: "设想；情景；可能发生的情况", inText: "同一种情景下的对照模拟", collocation: "a worst-case scenario；under this scenario", diff: "复数是 scenarios。阅读里常出现在“做预测、做假设”的段落。" },
+        { lemma: "stimulus", pos: "n.", ipa: "/ˈstɪmjələs/", meaning: "刺激（物）；刺激政策", inText: "联邦刺激资金", collocation: "economic / fiscal stimulus；a stimulus to growth", diff: "复数 stimuli。形容词 stimulating。经济语境里就是“刺激计划”。" },
+        { lemma: "hypothesis", pos: "n.", ipa: "/haɪˈpɒθəsɪs/", meaning: "假说；假设", inText: "湿地吸收波能的假说", collocation: "test / support / reject a hypothesis", diff: "复数 hypotheses。比 theory 弱一级：假说尚待验证，理论已有较多证据。" },
+        { lemma: "prestige", pos: "n.", ipa: "/preˈstiːʒ/", meaning: "声望；威信", inText: "国家命名的声望", collocation: "high prestige；a prestige project", diff: "形容词 prestigious（有声望的），六级阅读里形容大学、奖项的高频词。" },
+        { lemma: "tenure", pos: "n.", ipa: "/ˈtenjə/", meaning: "任期；（终身）教职；土地权属", inText: "土地权属", collocation: "land tenure；academic tenure", diff: "两个高频义项：大学里的“终身教职”，以及 land tenure＝土地权属，本批用的后者。" },
+        { lemma: "resurrection", pos: "n.", ipa: "/ˌrezəˈrekʃn/", meaning: "复活；复兴", inText: "湿地安静的“复活”", collocation: "the resurrection of…", diff: "动词 resurrect。除宗教义外，常比喻“使衰败之物重新兴起”。" },
+        { lemma: "predator", pos: "n.", ipa: "/ˈpredətə/", meaning: "捕食者；掠夺者", inText: "苍鹭、水獭等捕食者回归", collocation: "predator and prey；a natural predator", diff: "形容词 predatory（掠夺性的），商业语境里指“恶意收购”。" },
+        { lemma: "rationality", pos: "n.", ipa: "/ˌræʃəˈnæləti/", meaning: "合理性；理性", inText: "在原地重建是否合理", collocation: "bounded rationality；economic rationality", diff: "形容词 rational。bounded rationality＝有限理性，是经济学里的固定说法。" },
+        { lemma: "retreat", pos: "v./n.", ipa: "/rɪˈtriːt/", meaning: "后退；撤退；退缩；静修处", inText: "障壁海滩不断后退", collocation: "retreat from；the retreat of glaciers", diff: "既可指军队撤退，也可指海岸线、冰川“后退”，阅读里后者更常见。" },
+        { lemma: "leverage", pos: "v./n.", ipa: "/ˈliːvərɪdʒ/", meaning: "利用；撬动；杠杆作用", inText: "用联邦资金撬动土地收购", collocation: "leverage sth to do sth；financial leverage", diff: "本义“杠杆”，动词义“用有限资源撬动更大成果”，六级作文很好用。" },
+        { lemma: "warehouse", pos: "n.", ipa: "/ˈweəhaʊs/", meaning: "仓库", inText: "建在填埋湿地上的仓库", collocation: "a distribution warehouse；warehouse club", diff: "warehouse club 指仓储式卖场；注意重音在前。" },
+        { lemma: "democracy", pos: "n.", ipa: "/dɪˈmɒkrəsi/", meaning: "民主；民主制度", inText: "对地方民主的考验", collocation: "local democracy；a democratic process", diff: "形容词 democratic。阅读里常与 accountability、participation 一起出现。" },
+        { lemma: "segment", pos: "n./v.", ipa: "/ˈseɡmənt/", meaning: "部分；段；细分市场", inText: "一段海岸公路", collocation: "a segment of；market segment", diff: "作动词读 /seɡˈment/，指“分割”。商业语境里 market segment＝细分市场。" },
+        { lemma: "justification", pos: "n.", ipa: "/ˌdʒʌstɪfɪˈkeɪʃn/", meaning: "理由；正当性", inText: "收购房产的理由", collocation: "the justification for sth / doing sth", diff: "动词 justify。写作里用来“给出理由”，比 reason 更强调“是否站得住”。" },
+        { lemma: "exhaustion", pos: "n.", ipa: "/ɪɡˈzɔːstʃən/", meaning: "精疲力竭；耗尽", inText: "储备金接近耗尽", collocation: "physical exhaustion；the exhaustion of reserves", diff: "动词 exhaust。既指人的疲惫，也指资源的耗尽，看主语判断。" },
+        { lemma: "hurricane", pos: "n.", ipa: "/ˈhʌrɪkən/", meaning: "飓风", inText: "登陆的飓风", collocation: "hurricane season；a category-4 hurricane", diff: "地域区别要记：大西洋叫 hurricane，太平洋叫 typhoon，印度洋叫 cyclone。" },
+        { lemma: "enrollment", pos: "n.", ipa: "/ɪnˈrəʊlmənt/", meaning: "登记；报名；入学人数", inText: "买断方案的报名人数", collocation: "enrollment in；school enrollment", diff: "美式拼写 enrollment，英式 enrolment。阅读里常指“参与人数”。" },
+        { lemma: "retailer", pos: "n.", ipa: "/ˈriːteɪlə/", meaning: "零售商", inText: "沿岸的一排零售商", collocation: "a high-street retailer；online retailers", diff: "与 wholesaler（批发商）相对；retail 是零售，动词也作“零售”。" },
+        { lemma: "expedition", pos: "n.", ipa: "/ˌekspəˈdɪʃn/", meaning: "远征；考察（队）", inText: "大学的野外考察", collocation: "go on an expedition；a scientific expedition", diff: "与 trip 比更正式，带“有目的的远行”，科学考察常用它。" },
+        { lemma: "stigma", pos: "n.", ipa: "/ˈstɪɡmə/", meaning: "污名；耻辱", inText: "接受买断所带的污名", collocation: "the stigma attached to / associated with sth", diff: "动词 stigmatize。社会类阅读高频：the stigma of mental illness / of poverty。" }
       ]
     }
   ]
