@@ -10,7 +10,7 @@ window.VOCAB = {
   meta: {
     title: "英语阅读本",
     subtitle: "English Reader",
-    updated: "2026-11-11"
+    updated: "2026-11-14"
   },
 
   /* 领域划分：每篇短文归到一个领域，页面上可以按领域筛选 */
@@ -302,6 +302,71 @@ window.VOCAB = {
         { lemma: "retailer", pos: "n.", ipa: "/ˈriːteɪlə/", meaning: "零售商", inText: "沿岸的一排零售商", collocation: "a high-street retailer；online retailers", diff: "与 wholesaler（批发商）相对；retail 是零售，动词也作“零售”。" },
         { lemma: "expedition", pos: "n.", ipa: "/ˌekspəˈdɪʃn/", meaning: "远征；考察（队）", inText: "大学的野外考察", collocation: "go on an expedition；a scientific expedition", diff: "与 trip 比更正式，带“有目的的远行”，科学考察常用它。" },
         { lemma: "stigma", pos: "n.", ipa: "/ˈstɪɡmə/", meaning: "污名；耻辱", inText: "接受买断所带的污名", collocation: "the stigma attached to / associated with sth", diff: "动词 stigmatize。社会类阅读高频：the stigma of mental illness / of poverty。" }
+      ]
+    },
+
+    {
+      id: "b04",
+      title: "The Island That Was Sold Twice",
+      titleZh: "被卖了两次的岛",
+      genre: "六级议论文",
+      field: "society",
+      date: "2026-11-14",
+      note: "旅游开发、短租与住房：社会类阅读最常考的“地方被爱到死”议题，24 个词串在同一条线上。",
+
+      paragraphs: [
+        {
+          en: "For three hundred years the island's economy was fish, wool and the [[ferry]] timetable. Then a travel writer called it a [[paradise]], and the [[algorithm]] did the rest: one photograph of the harbour at dusk was enough to [[trigger]] a wave of bookings that has not broken since. The [[intensity]] of the season is now hard to describe to anyone who has not queued for the [[ferry]] in August. What visitors see is a harbour that has become a [[fixture]] of every list of places to see before they are ruined; what they do not see is the [[fragments|fragment]] of an economy that the list replaced.",
+          zh: "三百年来，这座岛的经济就是鱼、羊毛和**渡船**时刻表。后来一位旅行作家把它称作**天堂**，剩下的交给了**算法**：黄昏港口的一张照片，就足以**引发**至今未退的订房潮。旺季的**强度**，很难向没在八月排过**渡船**的人解释。游客看到的是已经成为各类“此生必去”榜单**常客**的港口；他们看不到的，是这张榜单所取代的经济**碎片**。"
+        },
+        {
+          en: "Behind the postcard the arithmetic is brutal. A cottage that a [[tenant]] rented for a winter wage is now a [[commodity]] let by the week, and the [[attendant]] costs of that trade — waste collection, parking, water — fall on the same council that can barely afford them. Families whose [[ancestry]] runs back to the fishing fleet have moved to the mainland, and the age [[pyramid]] has thinned at the base. The council's [[pledge]] to build thirty affordable homes is, on its own, only a [[fragment]] of what is needed; planning [[constraints|constraint]] and land prices have already swallowed two of the proposed sites.",
+          zh: "明信片背后，账算得很残酷。一间原本以冬天工钱租给**房客**的小屋，如今成了按周出租的**商品**；这门生意的**连带**成本——垃圾清运、停车、供水——落在那点钱都勉强掏得起的同一届议会身上。**祖上**可以追到渔船队的家庭已经搬去大陆，年龄**金字塔**的底部越来越细。议会**承诺**建三十套可负担住房，这本身也只是所需的一个**碎片**；规划**限制**和地价已经吞掉了两个拟选地块。"
+        },
+        {
+          en: "[[Resentment|resentment]] is not the same as hostility, and it is usually quieter. It shows up in the way islanders talk about the [[celebrity]] chef who opened a [[pasta]] place on the quay — with affection, then a pause. The restaurant is good; it is also the reason the flat above it costs what it does. One councillor, who calls herself a small-d [[democrat]], argues that the [[ultimate]] problem is not tourism but the [[obsession]] with growth that tourism merely satisfies, and that the [[provision]] of services should be planned for residents first and visitors second.",
+          zh: "**怨恨**不同于敌意，通常也安静得多。它体现在岛民谈起那位在码头上开**意面**馆的**名人**厨师的方式里——先是有感情，然后停顿一下。那家餐馆确实好；它也确实是楼上那套公寓贵成这样的原因。一位自称“小写 d 的**民主派**”的议员认为，**最终**的问题不是旅游业，而是旅游只是满足了的那种对增长的**执迷**；服务的**供给**应当先按居民规划，再考虑游客。"
+        },
+        {
+          en: "Some remedies are unglamorous. [[Supervision|supervision]] of short-term lets, a register, a cap on nights — measures like these face real [[constraints|constraint]] in law, and the council's one [[supervisor]] admits that the enforcement team is two people. But the island is not a museum, and it does not want to become a [[refuge]] from the modern economy; it wants to keep the school open. The deeper point may be that a place can be loved to death, and that the [[intensity]] of that love, unlike the [[ferry]], does not run to a timetable.",
+          zh: "有些补救办法并不体面。短租房**监管**、登记册、夜数上限——这类措施在法律上受真实**约束**，而议会唯一一位**主管**承认，执法团队只有两个人。但这座岛不是博物馆，也不想成为逃离现代经济的**避难所**；它想保住那所学校。更深的一点也许是：一个地方可以被爱到死，而这份爱的**强度**，不像**渡船**，不按时刻表运行。"
+        }
+      ],
+
+      focus: [
+        "a pledge to do sth",
+        "the attendant costs",
+        "under strict supervision",
+        "trigger a wave of",
+        "the obsession with growth",
+        "make provision for"
+      ],
+
+      words: [
+        { lemma: "ancestry", pos: "n.", ipa: "/ˈænsestri/", meaning: "祖先；血统；世系", inText: "祖上可追到渔船队", collocation: "of … ancestry；trace one's ancestry", diff: "形容词 ancestral（祖传的）。名词 ancestor 是“祖先”这个人，ancestry 是整体的“血统、家世”。" },
+        { lemma: "pledge", pos: "n./v.", ipa: "/pledʒ/", meaning: "承诺；保证；抵押", inText: "议会承诺建三十套住房", collocation: "make / give a pledge to do sth；pledge to do", diff: "比 promise 正式，常用于政治、慈善场合；也可指“抵押（物）”。" },
+        { lemma: "tenant", pos: "n.", ipa: "/ˈtenənt/", meaning: "房客；租户；佃户", inText: "按冬天工钱租房的房客", collocation: "a sitting tenant；tenant rights", diff: "与 landlord（房东）相对；动词 tenant 指“租用”。" },
+        { lemma: "intensity", pos: "n.", ipa: "/ɪnˈtensəti/", meaning: "强度；剧烈；专注", inText: "旺季的强度", collocation: "the intensity of the heat / the season", diff: "形容词 intense（强烈的）与 intensive（密集的、集约的）要分清：intensive farming＝集约农业。" },
+        { lemma: "paradise", pos: "n.", ipa: "/ˈpærədaɪs/", meaning: "天堂；乐土", inText: "被旅行作家称作天堂", collocation: "a tropical paradise；a shoppers' paradise", diff: "可比喻“某类人的乐园”，如 a paradise for hikers。" },
+        { lemma: "refuge", pos: "n.", ipa: "/ˈrefjuːdʒ/", meaning: "避难所；庇护；藏身处", inText: "逃离现代经济的避难所", collocation: "take refuge in；a wildlife refuge", diff: "动词 refuge 罕见，常用 take refuge；形容词是 refugee（难民）——注意形式不同。" },
+        { lemma: "fragment", pos: "n./v.", ipa: "/ˈfræɡmənt/", meaning: "碎片；片段；（使）碎裂", inText: "旧经济留下的碎片", collocation: "a fragment of；break into fragments", diff: "作名词重音在前 /ˈfræɡmənt/，作动词重音在后 /fræɡˈment/。" },
+        { lemma: "ferry", pos: "n./v.", ipa: "/ˈferi/", meaning: "渡船；渡口；渡运", inText: "渡船时刻表", collocation: "take the ferry；ferry sb across", diff: "动词用法常带 across/to：ferry passengers to the island。" },
+        { lemma: "supervisor", pos: "n.", ipa: "/ˈsuːpəvaɪzə/", meaning: "主管；监督者；导师", inText: "议会负责执法的主管", collocation: "a shift supervisor；a PhD supervisor", diff: "动词 supervise，名词 supervision。英式大学里也指“导师”。" },
+        { lemma: "fixture", pos: "n.", ipa: "/ˈfɪkstʃə/", meaning: "固定装置；（固定的）赛事、常客", inText: "各类榜单的“常客”", collocation: "a fixture of；a fixture list", diff: "除“固定装置”外，英式英语里 a fixture＝固定的比赛日程，也比喻“雷打不动的存在”。" },
+        { lemma: "commodity", pos: "n.", ipa: "/kəˈmɒdəti/", meaning: "商品；大宗商品；有用的东西", inText: "住房成了按周出租的商品", collocation: "commodity prices；a valuable commodity", diff: "经济学里指可交易的标准品；抽象用法：patience is a rare commodity。" },
+        { lemma: "resentment", pos: "n.", ipa: "/rɪˈzentmənt/", meaning: "怨恨；不满", inText: "岛民的不满", collocation: "resentment at / towards / against", diff: "动词 resent。比 anger 更偏“因不公而积怨”，常与 simmering、deep-seated 搭配。" },
+        { lemma: "ultimate", pos: "adj.", ipa: "/ˈʌltɪmət/", meaning: "最终的；根本的；极致的", inText: "最终的问题", collocation: "the ultimate goal；ultimately", diff: "副词 ultimately 有两个义：最后、根本上。别与 final 混：ultimate 还可指“最根本的”。" },
+        { lemma: "constraint", pos: "n.", ipa: "/kənˈstreɪnt/", meaning: "限制；约束", inText: "法律上的限制", collocation: "time / financial constraints；under constraint", diff: "动词 constrain。阅读里常见 budget constraints、legal constraints 这类搭配。" },
+        { lemma: "attendant", pos: "adj./n.", ipa: "/əˈtendənt/", meaning: "随之而来的；伴随的；n. 服务员", inText: "这门生意带来的连带成本", collocation: "attendant costs / problems / risks", diff: "两种词性都考：作形容词是“随之而来的”，作名词是“随从、服务员”（flight attendant）。" },
+        { lemma: "supervision", pos: "n.", ipa: "/ˌsuːpəˈvɪʒn/", meaning: "监督；管理；指导", inText: "对短租房的监管", collocation: "under supervision；close supervision", diff: "动词 supervise。与 inspection 区别：supervision 是持续的日常监督，inspection 是检查那一次。" },
+        { lemma: "pyramid", pos: "n.", ipa: "/ˈpɪrəmɪd/", meaning: "金字塔；金字塔形结构", inText: "年龄金字塔底部变细", collocation: "the age pyramid；a pyramid scheme", diff: "两个高频引申：population pyramid（人口结构图）、pyramid scheme（传销）。" },
+        { lemma: "obsession", pos: "n.", ipa: "/əbˈseʃn/", meaning: "痴迷；执念；着魔", inText: "对增长的执迷", collocation: "an obsession with sth", diff: "动词 obsess，形容词 obsessive。与 hobby 不同，obsession 带“过度、失控”的意味。" },
+        { lemma: "algorithm", pos: "n.", ipa: "/ˈælɡərɪðəm/", meaning: "算法", inText: "推荐算法", collocation: "a search / recommendation algorithm", diff: "注意读音重音在首音节。抽象用法常指“决定什么被看见的规则”。" },
+        { lemma: "trigger", pos: "v./n.", ipa: "/ˈtrɪɡə/", meaning: "引发；触发；n. 扳机、诱因", inText: "引发订房潮", collocation: "trigger a reaction / a debate；trigger off", diff: "比 cause 更有“一触即发”的画面感；名词义“诱因”在医学、心理类文章里常见。" },
+        { lemma: "celebrity", pos: "n.", ipa: "/səˈlebrəti/", meaning: "名人；名声", inText: "名人厨师", collocation: "a celebrity chef；celebrity culture", diff: "可作定语：celebrity endorsement（名人代言）。与 fame 区别：celebrity 指人，fame 指名声。" },
+        { lemma: "democrat", pos: "n.", ipa: "/ˈdeməkræt/", meaning: "民主主义者；民主派", inText: "自称小写 d 的民主派议员", collocation: "a small-d democrat", diff: "大写 Democrat 指美国民主党人，小写 democrat 指相信民主的人，六级阅读会拿大小写做区分。" },
+        { lemma: "provision", pos: "n.", ipa: "/prəˈvɪʒn/", meaning: "提供；供给；条款；储备", inText: "公共服务的供给", collocation: "the provision of；make provision for", diff: "动词 provide。法律文本里指“条款”，写作里 the provision of services 很常用。" },
+        { lemma: "pasta", pos: "n.", ipa: "/ˈpæstə/", meaning: "意大利面（食）", inText: "码头上开的意面馆", collocation: "a pasta dish；fresh pasta", diff: "不可数名词，没有复数；泛指面食统称。" }
       ]
     }
   ]
