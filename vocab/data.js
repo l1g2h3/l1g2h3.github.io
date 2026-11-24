@@ -10,7 +10,7 @@ window.VOCAB = {
   meta: {
     title: "英语阅读本",
     subtitle: "English Reader",
-    updated: "2026-11-14"
+    updated: "2026-11-28"
   },
 
   /* 领域划分：每篇短文归到一个领域，页面上可以按领域筛选 */
@@ -367,6 +367,265 @@ window.VOCAB = {
         { lemma: "democrat", pos: "n.", ipa: "/ˈdeməkræt/", meaning: "民主主义者；民主派", inText: "自称小写 d 的民主派议员", collocation: "a small-d democrat", diff: "大写 Democrat 指美国民主党人，小写 democrat 指相信民主的人，六级阅读会拿大小写做区分。" },
         { lemma: "provision", pos: "n.", ipa: "/prəˈvɪʒn/", meaning: "提供；供给；条款；储备", inText: "公共服务的供给", collocation: "the provision of；make provision for", diff: "动词 provide。法律文本里指“条款”，写作里 the provision of services 很常用。" },
         { lemma: "pasta", pos: "n.", ipa: "/ˈpæstə/", meaning: "意大利面（食）", inText: "码头上开的意面馆", collocation: "a pasta dish；fresh pasta", diff: "不可数名词，没有复数；泛指面食统称。" }
+      ]
+    },
+
+    {
+      id: "b05",
+      title: "The City That Measures Its Own Tide",
+      titleZh: "量自己潮水的城",
+      genre: "六级说明文",
+      field: "climate",
+      date: "2026-11-25",
+      note: "海平面上升与老城：防洪、迁移、资金。气候类阅读的经典结构——数据、困境、政策、情绪。",
+
+      paragraphs: [
+        {
+          en: "The city has measured its own tide for two centuries, and that record is now the most precise instrument it owns. [[Satellite|satellite]] data confirm what the harbour master's marks have long suggested: the water crosses a [[threshold]] once every few winters that it used to cross once a century. The [[magnitude]] of the change is easy to state and hard to feel. The [[standpoint]] of the engineers is that the city can adapt, provided the [[endeavour]] is funded for decades rather than years; two of the three pumping stations already sit below the level the models call safe.",
+          zh: "这座城市量自己的潮水量了两百年，这份记录如今是它最精密的仪器。**卫星**数据印证了港口水位标尺早就暗示的事：过去一个世纪才越过的那个**阈值**，现在每隔几个冬天就越过一次。变化的**幅度**说起来容易，感受起来难。工程师的**立场**是：只要这项**努力**能按几十年而不是几年来投资，城市是能适应的；而三座泵站里已经有两座，低于模型所说安全线以下。"
+        },
+        {
+          en: "Below the streets the problem is less visible. The [[sewage]] system, built when the population was a third of what it is, backs up in heavy rain — a [[nuisance]] every summer, a [[plague]] in a storm. The [[fabric]] of the old town was never designed to be pumped, and [[migration]] inland has begun so quietly that only the [[solitude]] of winter streets makes it visible.",
+          zh: "街道之下的问题不那么显眼。**污水**系统建于人口只有如今三分之一的时候，一到暴雨就倒灌——夏天是**麻烦**，风暴里就是**瘟疫**。老城的**肌理**从来不是按“可抽排”设计的；而向内陆的**迁移**已经开始得那么安静，只有冬天街道的**冷清**让它显形。"
+        },
+        {
+          en: "In [[parliament]] the argument is about money and time. A [[memorandum]] from the finance ministry sets out three options, each assuming a [[subsidy]] that has not been agreed, and the consultants' [[prescription]] is the familiar one: raise the walls, move the harbour, buy out the low streets. What the [[mindset]] behind that plan cannot supply is patience.",
+          zh: "在**议会**里，争的是钱和时间。财政部的一份**备忘录**列出三个方案，每一个都假定了一笔尚未谈成的**补贴**；顾问开出的**处方**是老一套：加高堤墙、搬迁港口、买断低洼街区。而这套方案背后的**心态**提供不了的东西，恰恰是耐心。"
+        },
+        {
+          en: "None of this is a [[catastrophe]] yet, and that is precisely the difficulty. The [[extinction]] of the local fishery, the loss of a [[heritage]] site, the [[multitude]] of small decisions that follow — these arrive as [[sentiment]] long before they arrive as data. A [[passport]] is now more useful in this town than a boat licence, and a [[privilege]] once taken for granted, a dry cellar, has become a [[strand]] in every family's plan.",
+          zh: "这一切都还称不上**灾难**，而这恰恰是难处。本地渔业的**灭绝**、一处**遗产**的失去、随之而来的**大量**细碎决定——它们先以**情绪**到来，很久之后才以数据到来。在这座城里，一本**护照**如今比一张渔船执照更有用；而一项曾被视作理所当然的**特权**——一间不进水的地窖——已经成了每个家庭计划里的一**股**线。"
+        }
+      ],
+
+      focus: [
+        "cross a threshold",
+        "the magnitude of the change",
+        "from the standpoint of",
+        "the fabric of society",
+        "a subsidy for",
+        "prescribe a course of action"
+      ],
+
+      words: [
+        { lemma: "endeavour", pos: "n./v.", ipa: "/ɪnˈdevə/", meaning: "努力；尽力；事业", inText: "需要几十年投入的努力", collocation: "a joint endeavour；endeavour to do sth", diff: "英式拼写，美式 endeavor。作名词时比 effort 更“事业感”，常指长期的共同事业。" },
+        { lemma: "heritage", pos: "n.", ipa: "/ˈherɪtɪdʒ/", meaning: "遗产；传统（文化层面的）", inText: "一处文化遗产地", collocation: "cultural heritage；a heritage site", diff: "与 inheritance 区别：heritage 多指文化、自然遗产（集体），inheritance 指个人继承的财产。" },
+        { lemma: "threshold", pos: "n.", ipa: "/ˈθreʃhəʊld/", meaning: "门槛；临界值；阈值", inText: "过去百年才越过的阈值", collocation: "cross a threshold；a pain threshold", diff: "科学语境里是“阈值”，日常里是“门槛”；比喻义“临界点”与 tipping point 接近。" },
+        { lemma: "nuisance", pos: "n.", ipa: "/ˈnjuːsns/", meaning: "麻烦事；讨厌的人或事", inText: "每年夏天的一桩麻烦", collocation: "a nuisance to sb；public nuisance", diff: "法律术语 public nuisance＝妨害公共；语气比 problem 轻，带“烦人”的味道。" },
+        { lemma: "standpoint", pos: "n.", ipa: "/ˈstændpɔɪnt/", meaning: "立场；观点", inText: "工程师的立场", collocation: "from the standpoint of；a moral standpoint", diff: "与 point of view 近义，但 standpoint 更强调“立足点、利益位置”。" },
+        { lemma: "sewage", pos: "n.", ipa: "/ˈsuːɪdʒ/", meaning: "污水；下水道污物", inText: "污水系统", collocation: "a sewage system / plant；raw sewage", diff: "不可数。与 sewer（下水道）区别：sewer 是管道，sewage 是流的东西。" },
+        { lemma: "passport", pos: "n.", ipa: "/ˈpɑːspɔːt/", meaning: "护照；途径，保障", inText: "这本护照比渔船执照更有用", collocation: "a passport to success", diff: "比喻义常考：a passport to sth＝通往某事的敲门砖。" },
+        { lemma: "mindset", pos: "n.", ipa: "/ˈmaɪndset/", meaning: "心态；思维方式", inText: "方案背后的心态", collocation: "a growth mindset；shift the mindset", diff: "近年高频新词，常与 fixed/growth 搭配（固定型／成长型思维）。" },
+        { lemma: "memorandum", pos: "n.", ipa: "/ˌmeməˈrændəm/", meaning: "备忘录；内部通告", inText: "财政部的备忘录", collocation: "a memorandum on sth；memo", diff: "复数 memoranda 或 memorandums。日常缩略为 memo。" },
+        { lemma: "extinction", pos: "n.", ipa: "/ɪkˈstɪŋkʃn/", meaning: "灭绝；消亡", inText: "本地渔业的消亡", collocation: "face extinction；on the brink of extinction", diff: "动词 extinct（形容词）/ extinguish（熄灭）。物种类文章高频。" },
+        { lemma: "multitude", pos: "n.", ipa: "/ˈmʌltɪtjuːd/", meaning: "大量；众多；民众", inText: "大量细碎决定", collocation: "a multitude of；the multitude", diff: "a multitude of + 可数名词复数，比 many 更书面。" },
+        { lemma: "fabric", pos: "n.", ipa: "/ˈfæbrɪk/", meaning: "织物；结构；（社会的）肌理", inText: "老城的肌理", collocation: "the fabric of society；urban fabric", diff: "抽象义高频：the fabric of society＝社会结构，常与 tear、weaken 搭配。" },
+        { lemma: "magnitude", pos: "n.", ipa: "/ˈmæɡnɪtjuːd/", meaning: "巨大；量级；重要性", inText: "变化的幅度", collocation: "the magnitude of；of the first magnitude", diff: "地震震级也用 magnitude；阅读里常指“规模、严重程度”。" },
+        { lemma: "privilege", pos: "n./v.", ipa: "/ˈprɪvəlɪdʒ/", meaning: "特权；荣幸；特权阶层", inText: "不进水的地窖成了特权", collocation: "a privilege to do sth；privileged background", diff: "形容词 privileged。社会类文章常与 inequality、access 一起出现。" },
+        { lemma: "catastrophe", pos: "n.", ipa: "/kəˈtæstrəfi/", meaning: "灾难；大祸", inText: "还称不上灾难", collocation: "a natural catastrophe；end in catastrophe", diff: "比 disaster 更重，指“毁灭性后果”。形容词 catastrophic。" },
+        { lemma: "migration", pos: "n.", ipa: "/maɪˈɡreɪʃn/", meaning: "迁移；移居；（动物）迁徙", inText: "向内陆的迁移", collocation: "mass migration；migration patterns", diff: "动词 migrate。与 immigration 区别：migration 泛指移动，immigration 专指“移入某国”。" },
+        { lemma: "solitude", pos: "n.", ipa: "/ˈsɒlɪtjuːd/", meaning: "独处；孤独；荒僻", inText: "冬天街道的冷清", collocation: "in solitude；peaceful solitude", diff: "偏中性甚至正面（独处的宁静）；loneliness 才是负面的“孤独”。" },
+        { lemma: "plague", pos: "n./v.", ipa: "/pleɪɡ/", meaning: "瘟疫；灾害；v. 困扰", inText: "风暴里的瘟疫", collocation: "a plague of；be plagued by", diff: "动词义高频：be plagued by problems＝被问题困扰，阅读里比“瘟疫”更常见。" },
+        { lemma: "subsidy", pos: "n.", ipa: "/ˈsʌbsədi/", meaning: "补贴；津贴", inText: "尚未谈成的补贴", collocation: "a government subsidy；subsidize", diff: "复数 subsidies。动词 subsidize。政策类文章必出现。" },
+        { lemma: "satellite", pos: "n.", ipa: "/ˈsætəlaɪt/", meaning: "卫星；附属机构", inText: "卫星数据", collocation: "satellite imagery；a satellite state", diff: "两个义项：人造卫星/天体卫星，以及“附属的”（satellite campus）。" },
+        { lemma: "sentiment", pos: "n.", ipa: "/ˈsentɪmənt/", meaning: "情绪；观点；感情", inText: "先以情绪到来", collocation: "public sentiment；market sentiment", diff: "与 emotion 区别：sentiment 更偏“集体态度、舆论倾向”，经济报道里指“市场情绪”。" },
+        { lemma: "strand", pos: "n./v.", ipa: "/strænd/", meaning: "股；缕；方面；v. 使滞留", inText: "家庭计划里的一股线", collocation: "a strand of；be stranded", diff: "名词指“一股（线、头发）”，也指“（论点、计划的）一个方面”；stranded＝滞留的。" },
+        { lemma: "prescription", pos: "n.", ipa: "/prɪˈskrɪpʃn/", meaning: "处方；药方；对策", inText: "顾问开出的对策", collocation: "a prescription for；prescribe", diff: "比喻义常考：a prescription for success＝成功之道。" },
+        { lemma: "parliament", pos: "n.", ipa: "/ˈpɑːləmənt/", meaning: "议会；国会", inText: "议会里的争论", collocation: "a member of parliament；parliamentary", diff: "英式体制用 parliament；美国用 Congress。注意发音重音在首音节。" }
+      ]
+    },
+
+    {
+      id: "b06",
+      title: "The Museum of a Working Town",
+      titleZh: "一座劳作之镇的博物馆",
+      genre: "六级说明文",
+      field: "economy",
+      date: "2026-11-26",
+      note: "资源型城镇的兴衰：矿业、移民、手艺与记忆。经济类阅读常从“一个行业的兴衰”切入。",
+
+      paragraphs: [
+        {
+          en: "The town grew up around a [[mineral]] seam that ran under the valley for eleven miles. For sixty years the [[deposit]] supported a near [[monopoly]] on a rare grade of ore, and the [[momentum]] of that trade carried everything else: the railway, the hospital, the swimming pool. The [[milestone]] everyone remembers is 1958, when the pit passed a million tons in a year. [[Fluctuations|fluctuation]] in the price of ore after that were brutal, and by the 1980s the company was running a permanent [[deficit]].",
+          zh: "这座镇子围绕一条在山谷下绵延十一英里的**矿**脉长起来。六十年来，那处**矿床**支撑着对一种稀有矿石近乎**垄断**的地位，这门生意的**势头**带动了其他一切：铁路、医院、游泳池。人人记得的**里程碑**是 1958 年，那一年矿井年产突破一百万吨。此后矿石价格的**波动**十分剧烈，到 1980 年代，公司已经常年处于**亏损**之中。"
+        },
+        {
+          en: "[[Migrant]] labour built the town as much as the seam did. [[Immigration]] changed its accent, its food and its politics, and for two generations families lived on [[subsistence]] wages while the owners took the profit. What the town kept was [[craftsmanship]] — the [[ingenuity]] of men who could fix a pump with a piece of wire — and what it lost was a [[chunk]] of its workforce every time the market turned. [[Burnout]] was not a word anyone used then; the [[syndrome]] it describes arrived long before the diagnosis.",
+          zh: "建起这座镇的，不只是矿脉，还有**外来**劳工。**移民**改变了这里的口音、饮食和政治；有两代人就靠**勉强糊口**的工资过活，利润则被矿主拿走。镇子留下的是**手艺**——能用一根铁丝修好水泵的人的那种**巧思**；而每次市场转向，它就会失去一大批**劳动力**。那时没人用**倦怠**这个词，但它所描述的**症候**，早在有诊断之前就已经出现。"
+        },
+        {
+          en: "The [[repository]] of all this is a converted warehouse by the canal. Its prize exhibit is a winding engine, a [[masterpiece]] of Victorian engineering that still turns. What the museum does best is not the machine but the [[testimony]] around it: a lunch box, a wage slip, a photograph taken at the pit head. There is an [[intimacy]] in those objects that no timeline can reproduce, and the curator's [[gesture]] — letting visitors handle a miner's lamp — is worth more than the label beside it.",
+          zh: "这一切的**收藏地**是运河边一座改装过的仓库。它的镇馆之宝是一台卷扬机，一件至今还能转动的维多利亚时代工程**杰作**。博物馆最擅长的不是机器，而是机器周围的**证言**：一个饭盒、一张工资条、一张在井口拍下的照片。这些物件里有一种时间线复制不出来的**亲近感**，而馆长的一个**举动**——让参观者上手摸一盏矿灯——比旁边那块说明牌更有价值。"
+        },
+        {
+          en: "Not everything here is reverent. A local [[satire]] staged every winter mocks the company that left, and a thin volume of [[poetry]] by a former pit electrician outsells the official history. The [[cricket]] club still plays on a ground the company once paid for, and a portrait of a [[monarch]] — presented in 1912 and never taken down — hangs above the bar.",
+          zh: "这里也不是什么都很庄重。每年冬天上演的一出本地**讽刺剧**，嘲讽的正是当年撤走的公司；一位前矿井电工写的一本薄薄**诗集**，销量超过了官方镇史。**板球**俱乐部还在公司当年出钱修的那块场地上打球，酒吧上方挂着一幅 1912 年送来、从未取下过的**君主**画像。"
+        }
+      ],
+
+      focus: [
+        "gain momentum",
+        "a permanent deficit",
+        "a masterpiece of",
+        "bear testimony to",
+        "run a deficit",
+        "subsistence wages"
+      ],
+
+      words: [
+        { lemma: "momentum", pos: "n.", ipa: "/məˈmentəm/", meaning: "势头；动力；动量", inText: "这门生意的势头", collocation: "gain / lose momentum；keep the momentum", diff: "物理里是“动量”，阅读里多是“势头”，常与 gain、build、lose 搭配。" },
+        { lemma: "deficit", pos: "n.", ipa: "/ˈdefɪsɪt/", meaning: "赤字；亏损；不足", inText: "常年亏损", collocation: "a budget deficit；run a deficit", diff: "与 debt 区别：deficit 是“收支差额”，debt 是“欠下的债”。" },
+        { lemma: "masterpiece", pos: "n.", ipa: "/ˈmɑːstəpiːs/", meaning: "杰作；代表作", inText: "维多利亚时代工程杰作", collocation: "a masterpiece of；the artist's masterpiece", diff: "也可夸张地用于非艺术领域：a masterpiece of organization。" },
+        { lemma: "testimony", pos: "n.", ipa: "/ˈtestɪməni/", meaning: "证词；证明；见证", inText: "物件留下的证言", collocation: "bear testimony to；give testimony", diff: "bear testimony to sth＝是…的见证，比 witness 更书面。" },
+        { lemma: "gesture", pos: "n./v.", ipa: "/ˈdʒestʃə/", meaning: "手势；姿态；表示", inText: "馆长的一个举动", collocation: "a gesture of goodwill；gesture towards", diff: "抽象义常考：a gesture＝一种表示的姿态（不一定有实际作用）。" },
+        { lemma: "ingenuity", pos: "n.", ipa: "/ˌɪndʒəˈnjuːəti/", meaning: "独创性；巧思；心灵手巧", inText: "用铁丝修水泵的巧思", collocation: "human ingenuity；the ingenuity of", diff: "形容词 ingenious（巧妙的）。与 genius 区别：ingenuity 是“巧思”这种能力，genius 是“天才”。" },
+        { lemma: "fluctuation", pos: "n.", ipa: "/ˌflʌktʃuˈeɪʃn/", meaning: "波动；起伏", inText: "价格的波动", collocation: "price fluctuations；fluctuate between", diff: "动词 fluctuate。经济文章高频，常用复数。" },
+        { lemma: "satire", pos: "n.", ipa: "/ˈsætaɪə/", meaning: "讽刺；讽刺作品", inText: "本地的讽刺剧", collocation: "a satire on sth；political satire", diff: "形容词 satirical。与 irony 区别：satire 是整部作品对社会的讽刺，irony 是“反讽”的修辞。" },
+        { lemma: "monopoly", pos: "n.", ipa: "/məˈnɒpəli/", meaning: "垄断；专营权；独占", inText: "对一种矿石的垄断", collocation: "hold a monopoly on；break a monopoly", diff: "经济类必考。动词 monopolize，注意拼写 -poly。" },
+        { lemma: "intimacy", pos: "n.", ipa: "/ˈɪntɪməsi/", meaning: "亲密；亲近感；私密", inText: "物件带来的亲近感", collocation: "a sense of intimacy；emotional intimacy", diff: "形容词 intimate。也可指“私密性”，如 the intimacy of a small room。" },
+        { lemma: "mineral", pos: "n./adj.", ipa: "/ˈmɪnərəl/", meaning: "矿物；矿物质；矿物的", inText: "矿区的那条矿脉", collocation: "mineral resources；mineral water", diff: "注意重音在首音节。mineral water 是矿泉水。" },
+        { lemma: "repository", pos: "n.", ipa: "/rɪˈpɒzətri/", meaning: "贮藏室；宝库；知识库", inText: "这段历史的收藏地", collocation: "a repository of；a data repository", diff: "抽象义很常用：a repository of knowledge/memory＝知识与记忆的宝库。" },
+        { lemma: "monarch", pos: "n.", ipa: "/ˈmɒnək/", meaning: "君主；帝王", inText: "一幅君主画像", collocation: "a reigning monarch；the monarchy", diff: "名词 monarchy＝君主制。注意与 monster 无关，词根是 mon-（单一）+ arch（统治）。" },
+        { lemma: "milestone", pos: "n.", ipa: "/ˈmaɪlstəʊn/", meaning: "里程碑；重大事件", inText: "1958 年那个里程碑", collocation: "reach a milestone；a milestone in", diff: "原指路旁的里程石，引申为“阶段性的重要节点”。" },
+        { lemma: "burnout", pos: "n.", ipa: "/ˈbɜːnaʊt/", meaning: "倦怠；精疲力竭；烧毁", inText: "那时没人用“倦怠”这个词", collocation: "job burnout；suffer burnout", diff: "近年高频心理词，指长期压力导致的耗竭，不只指“累”。" },
+        { lemma: "poetry", pos: "n.", ipa: "/ˈpəʊətri/", meaning: "诗歌（总称）；诗意", inText: "一本薄薄的诗集", collocation: "a collection of poetry；poetic", diff: "不可数；单首诗是 poem。形容词 poetic 还可指“富有诗意的”。" },
+        { lemma: "cricket", pos: "n.", ipa: "/ˈkrɪkɪt/", meaning: "板球；蟋蟀", inText: "板球俱乐部", collocation: "play cricket；not cricket（不公道）", diff: "两个义项：板球与蟋蟀。习语 it's not cricket＝这不公平。" },
+        { lemma: "deposit", pos: "n./v.", ipa: "/dɪˈpɒzɪt/", meaning: "矿床；存款；押金；v. 存放、沉积", inText: "那处矿床", collocation: "a mineral deposit；pay a deposit", diff: "义项多，按语境取：矿床（地质）、押金（租）、存款（银行）。" },
+        { lemma: "migrant", pos: "n./adj.", ipa: "/ˈmaɪɡrənt/", meaning: "移民；流动工人；迁徙的", inText: "外来劳工", collocation: "migrant workers；economic migrants", diff: "与 immigrant 区别：migrant 强调“流动、迁移”，immigrant 强调“移入并定居”。" },
+        { lemma: "immigration", pos: "n.", ipa: "/ˌɪmɪˈɡreɪʃn/", meaning: "移民（移入）；入境移民", inText: "移民改变了这里的口音", collocation: "immigration policy；illegal immigration", diff: "动词 immigrate；与 emigration（移出）成对记。" },
+        { lemma: "craftsmanship", pos: "n.", ipa: "/ˈkrɑːftsmənʃɪp/", meaning: "手艺；工艺；匠艺", inText: "镇子留下的是手艺", collocation: "fine craftsmanship；a tradition of craftsmanship", diff: "craftsman（工匠）+ -ship。比 skill 更强调“手艺人的水准”。" },
+        { lemma: "subsistence", pos: "n.", ipa: "/səbˈsɪstəns/", meaning: "生存；勉强糊口；生计", inText: "勉强糊口的工资", collocation: "subsistence farming；subsistence wages", diff: "subsistence farming＝自给农业，经济类文章的高频说法。" },
+        { lemma: "syndrome", pos: "n.", ipa: "/ˈsɪndrəʊm/", meaning: "综合征；典型表现", inText: "它所描述的症候", collocation: "a medical syndrome；the syndrome of decline", diff: "医学词，也引申为“一组典型现象”，如 not-invented-here syndrome。" },
+        { lemma: "chunk", pos: "n.", ipa: "/tʃʌŋk/", meaning: "大块；相当大的一部分", inText: "失去一大批劳动力", collocation: "a chunk of；chunks of time", diff: "口语化的“一大块”，a chunk of the market＝相当大的一块市场。" }
+      ]
+    },
+
+    {
+      id: "b07",
+      title: "After the Wave",
+      titleZh: "浪过之后",
+      genre: "六级议论文",
+      field: "society",
+      date: "2026-11-27",
+      note: "灾后重建中的利益与治理：从度假岛的海啸写社区韧性、规划违规与决策权。",
+
+      paragraphs: [
+        {
+          en: "The wave arrived on a Sunday, an hour before the [[tsunami]] sirens were believed. By dusk the harbour was a field of [[debris]] — boats, roofs, a school wall — and the island's [[sanctuary]] for nesting turtles had lost half its beach. What the cameras missed was the ordinary [[resilience]] that followed: fishermen who had lost everything were back on the water within a month, and a [[descendant]] of one of the old families reopened the guesthouse before the army arrived.",
+          zh: "那道浪是在一个星期天来的，比人们相信**海啸**警报还早一小时。到黄昏，港口已是一片**残骸**——船、屋顶、一堵校墙——岛上供海龟筑巢的**庇护区**失去了半个沙滩。镜头没有拍到的，是随后那种寻常的**韧性**：一无所有的渔民一个月内又出海了，一户老渔家的**后代**在军队到达之前就把客栈重新开了张。"
+        },
+        {
+          en: "Behind the recovery is a harder story. The island had been sold to an [[elite]] for whom a week of [[glamour]] was the point, and its [[profile]] on the booking sites rose as the beach disappeared. The government's first [[tactic]] was to rebuild exactly what had stood before, a [[collision]] of developers' interests with planning rules that no one had enforced. The [[violation]] was obvious in the files; the [[submission]] of insurance claims ran to forty thousand pages, and the [[payroll]] of the reconstruction agency outgrew the island's entire civil service.",
+          zh: "恢复的背后是更难看的故事。这座岛早就被卖给了一个**精英**圈层，对他们来说，一周的**光鲜**才是重点；随着沙滩消失，它在订房网站上的**曝光度**反而上升。政府的第一**策略**是照原样重建，这是开发商利益与规划规则的**碰撞**，而那些规则本就没人执行。档案里的**违规**一目了然；保险理赔的**提交**材料堆到四万页，重建机构的**工资总额**超过了全岛公务员的总和。"
+        },
+        {
+          en: "A [[summit]] was called in the capital, and the [[controversy]] that followed was not about money — the [[trillion]]-dollar insurance industry could absorb the loss — but about who would decide. [[Dedication]] is easy to praise in speeches and hard to schedule. The square that had held the [[millennium]] crowds now held tents, and for a [[glimpse]] of what was at stake you had to stand at low tide, where the old shoreline was still visible under the new sand.",
+          zh: "首都被迫召开**峰会**，随之而来的**争议**其实不在钱——**万亿**规模的保险业吸收得起这笔损失——而在由谁来决定。**奉献**在演讲里容易赞美，排进日程却很难。当年容纳**千禧年**人潮的那个广场，如今搭满了帐篷；要想**瞥见**真正的代价，得在退潮时站到沙滩上，旧的海岸线还压在新沙之下。"
+        },
+        {
+          en: "Down the coast, the recovery has a biology of its own. The [[fertility]] of the volcanic soil brought the gardens back in a season, faster than any contractor. But the clinics were treating wounds with a dwindling [[antibiotic]], and the [[notorious]] builder who had put the hotel on the dune was now the loudest voice on the reconstruction committee — a man so [[hostile]] to inspectors that the council met him in the car park.",
+          zh: "沿岸的恢复有自己的生物学。火山土的**肥力**让花园一个季节就回来了，比任何承包商都快。但诊所处理伤口用的**抗生素**已经快用完；而那位把酒店盖在沙丘上的**臭名昭著**的开发商，如今成了重建委员会上嗓门最大的人——他对检查人员的**敌意**之深，议会只好在停车场见他。"
+        }
+      ],
+
+      focus: [
+        "a sense of resilience",
+        "a collision of interests",
+        "in violation of",
+        "submit a claim",
+        "an elite group",
+        "hostile to"
+      ],
+
+      words: [
+        { lemma: "elite", pos: "n./adj.", ipa: "/eɪˈliːt/", meaning: "精英；上层集团；精英的", inText: "被卖给一个精英圈层", collocation: "the ruling elite；an elite university", diff: "作形容词：elite athletes＝顶尖运动员。注意重音在后。" },
+        { lemma: "glamour", pos: "n.", ipa: "/ˈɡlæmə/", meaning: "魅力；光鲜；诱惑力", inText: "一周的光鲜", collocation: "the glamour of；glamorous", diff: "英式拼写，美式 glamor。形容词 glamorous。多指“表面的吸引力”。" },
+        { lemma: "submission", pos: "n.", ipa: "/səbˈmɪʃn/", meaning: "提交；呈递；屈服", inText: "保险理赔的提交", collocation: "the submission of；submit to", diff: "动词 submit。商务语境里指“提交材料”，也可指“屈服”。" },
+        { lemma: "violation", pos: "n.", ipa: "/ˌvaɪəˈleɪʃn/", meaning: "违反；侵害；侵犯", inText: "规划上的违规", collocation: "in violation of；a violation of rights", diff: "动词 violate。固定搭配 in violation of＝违反（法律、规定）。" },
+        { lemma: "collision", pos: "n.", ipa: "/kəˈlɪʒn/", meaning: "碰撞；冲突", inText: "利益与规则的碰撞", collocation: "a collision between；head-on collision", diff: "动词 collide。抽象义指“利益、观点的冲突”，与 clash 近义。" },
+        { lemma: "payroll", pos: "n.", ipa: "/ˈpeɪrəʊl/", meaning: "工资总额；工资名单", inText: "重建机构的工资总额", collocation: "on the payroll；payroll costs", diff: "on the payroll＝在员工名单上。经济类文章里指“人力成本”。" },
+        { lemma: "profile", pos: "n./v.", ipa: "/ˈprəʊfaɪl/", meaning: "简介；形象；曝光度；v. 概述", inText: "订房网站上的曝光度", collocation: "raise one's profile；a high profile", diff: "高频搭配：high-profile（高调的）、keep a low profile（保持低调）。" },
+        { lemma: "tactic", pos: "n.", ipa: "/ˈtæktɪk/", meaning: "策略；手段；战术", inText: "政府的第一策略", collocation: "a tactic for；tactics", diff: "与 strategy 区别：tactic 是具体手段，strategy 是整体战略。" },
+        { lemma: "resilience", pos: "n.", ipa: "/rɪˈzɪliəns/", meaning: "韧性；恢复力；弹性", inText: "灾后那种韧性", collocation: "build resilience；economic resilience", diff: "形容词 resilient。气候、心理、经济文章都用它，是六级高频抽象名词。" },
+        { lemma: "fertility", pos: "n.", ipa: "/fəˈtɪləti/", meaning: "肥力；生育力；丰饶", inText: "火山土的肥力", collocation: "soil fertility；fertility rate", diff: "形容词 fertile。人口语境里 fertility rate＝生育率，与“肥力”是两个方向。" },
+        { lemma: "sanctuary", pos: "n.", ipa: "/ˈsæŋktʃuəri/", meaning: "庇护所；保护区；圣殿", inText: "海龟的庇护区", collocation: "a wildlife sanctuary；seek sanctuary", diff: "宗教义“圣殿”，现代多指“保护区、避难所”。" },
+        { lemma: "descendant", pos: "n.", ipa: "/dɪˈsendənt/", meaning: "后代；子孙", inText: "老渔家的后代", collocation: "a descendant of；descended from", diff: "反义 ancestor。动词 descend from＝是…的后代。" },
+        { lemma: "summit", pos: "n.", ipa: "/ˈsʌmɪt/", meaning: "峰会；顶峰；顶点", inText: "被迫召开的峰会", collocation: "hold a summit；reach the summit", diff: "政治义“峰会”与地理义“山顶”并存，注意语境。" },
+        { lemma: "tsunami", pos: "n.", ipa: "/tsuːˈnɑːmi/", meaning: "海啸", inText: "海啸警报", collocation: "a tsunami warning；a tsunami of", diff: "源自日语。比喻义常见：a tsunami of complaints＝铺天盖地的投诉。" },
+        { lemma: "controversy", pos: "n.", ipa: "/ˈkɒntrəvɜːsi/", meaning: "争议；争论", inText: "随之而来的争议", collocation: "cause / spark controversy；controversial", diff: "形容词 controversial。比 argument 更强调“公众层面的争议”。" },
+        { lemma: "debris", pos: "n.", ipa: "/ˈdebriː/", meaning: "残骸；碎片；废弃物", inText: "港口一片残骸", collocation: "clear the debris；space debris", diff: "不可数。s 不发音，读 /ˈdebriː/。灾难报道高频。" },
+        { lemma: "trillion", pos: "num.", ipa: "/ˈtrɪljən/", meaning: "万亿；兆", inText: "万亿规模的保险业", collocation: "a trillion dollars；trillions of", diff: "million 百万、billion 十亿、trillion 万亿，六级阅读常考数量级换算。" },
+        { lemma: "dedication", pos: "n.", ipa: "/ˌdedɪˈkeɪʃn/", meaning: "奉献；专注；献词", inText: "奉献在演讲里容易赞美", collocation: "dedication to；with dedication", diff: "动词 dedicate。与 devotion 近义，dedication 更强调“投入的持续性”。" },
+        { lemma: "millennium", pos: "n.", ipa: "/mɪˈleniəm/", meaning: "一千年；千禧年", inText: "千禧年的人潮", collocation: "the turn of the millennium；millennia", diff: "复数 millenniums 或 millennia。注意双 l、双 n。" },
+        { lemma: "glimpse", pos: "n./v.", ipa: "/ɡlɪmps/", meaning: "一瞥；瞥见", inText: "瞥见真正的代价", collocation: "catch a glimpse of；a glimpse into", diff: "强调“看到的瞬间”，常带“难得一见”的意味；与 glance（看一眼的动作）不同。" },
+        { lemma: "antibiotic", pos: "n./adj.", ipa: "/ˌæntibaɪˈɒtɪk/", meaning: "抗生素；抗菌的", inText: "快用完的抗生素", collocation: "a course of antibiotics；antibiotic resistance", diff: "常用复数。antibiotic resistance＝抗生素耐药性，是公共卫生高频议题。" },
+        { lemma: "notorious", pos: "adj.", ipa: "/nəʊˈtɔːriəs/", meaning: "臭名昭著的；声名狼藉的", inText: "臭名昭著的开发商", collocation: "notorious for；a notorious case", diff: "与 famous 区别：notorious 专指“因坏事出名”。名词 notoriety。" },
+        { lemma: "hostile", pos: "adj.", ipa: "/ˈhɒstaɪl/", meaning: "敌对的；不利的；恶劣的", inText: "对检查人员的敌意", collocation: "hostile to / towards；a hostile environment", diff: "名词 hostility。商务里 hostile takeover＝恶意收购。" }
+      ]
+    },
+
+    {
+      id: "b08",
+      title: "The Adjective Problem",
+      titleZh: "形容词的问题",
+      genre: "六级议论文",
+      field: "phenomenon",
+      date: "2026-11-28",
+      note: "科学传播里的“形容词通胀”：一切都 stunning、inevitable。现象类议论文，24 个形容词集中练。",
+
+      paragraphs: [
+        {
+          en: "The press release described the telescope's first image as [[stunning]], and the word was not wrong. What it showed — a [[galactic]] core resolved into individual stars — was [[immense]] in scale and, in the ordinary sense, [[incredible]]. The instrument is an [[inventive]] piece of engineering, and the team's [[exceptional]] patience over eleven years deserves the adjectives. The trouble begins when every release uses them.",
+          zh: "新闻稿把望远镜的首张图像称作**惊艳**，这个词用得并不算错。它显示的东西——一个被解析到单颗恒星的**星系**核心——规模**巨大**，按通常意义讲确实**难以置信**。这台仪器是一项**有创意**的工程，团队十一年的**非凡**耐心配得上那些形容词。问题始于每一次发布都在用它们。"
+        },
+        {
+          en: "Once a discovery is [[inevitable]] in the telling, readers stop noticing. A finding is [[imminent]] for three years; a result is [[controversial]] when the disagreement is technical; a delay is [[irrational]]; a rival's claim is [[ridiculous]]. The [[harsh]] truth is that most science is neither stunning nor inevitable, and the habit of saying so trains people to expect it.",
+          zh: "一项发现在叙述里一旦变成**必然**，读者就不再留意。一个结果**即将公布**了三年；一场分歧只是技术性的，却被说成**有争议**；一次延误被称作**不理性**；对手的说法被称作**可笑**。**残酷**的真相是：大多数科学研究既不惊艳，也不必然，而把它们都这么说的习惯，正在训练读者去期待这种效果。"
+        },
+        {
+          en: "What works better is [[straightforward]] language about what is [[compatible]] with the data. A [[robust]] result survives replication; an [[intensive]] study answers one narrow question well; a [[chronic]] problem is different from a [[notably]] sudden one. Precision is not the enemy of interest.",
+          zh: "更有效的做法，是用**直白**的语言说清楚哪些解释与数据**相符**。**稳健**的结果经得起重复；**深入**的研究把一个窄问题回答好；**慢性**问题与**显著**突发的问题不是一回事。精确并不是趣味的敌人。"
+        },
+        {
+          en: "There is also a political cost. Calling a landscape empty, as [[colonial]] mapmakers did, erases the [[indigenous]] knowledge that had managed it for centuries. The [[inherent]] bias of that language is not a small thing, and it is [[imperative]] that science writing stay plain where accuracy requires it — in some labs, plainness is now [[compulsory]] in every press release, a rule that leaves the marketing team [[irritated]].",
+          zh: "还有一层政治代价。像**殖民**时期的地图绘制者那样，把一片土地说成“空的”，等于抹掉**原住民**管理了数百年的知识。这种语言里**固有的**偏见不是小事；在准确性要求的地方，科学写作保持朴素是**必要的**——有些实验室现在把朴素写进每一份新闻稿，成了**强制**规定，市场团队对此**很不高兴**。"
+        }
+      ],
+
+      focus: [
+        "be compatible with",
+        "a robust finding",
+        "an inherent bias",
+        "it is imperative that",
+        "compulsory for",
+        "notably different"
+      ],
+
+      words: [
+        { lemma: "compatible", pos: "adj.", ipa: "/kəmˈpætəbl/", meaning: "兼容的；相符的；可共存的", inText: "与数据相符的解释", collocation: "be compatible with；compatible with each other", diff: "反义 incompatible。论证类文章高频：findings compatible with the theory。" },
+        { lemma: "notably", pos: "adv.", ipa: "/ˈnəʊtəbli/", meaning: "显著地；尤其；值得注意地", inText: "显著突发的问题", collocation: "most notably；notably absent", diff: "两种用法：修饰形容词表“显著地”，或引出例子表“尤其是”。" },
+        { lemma: "inventive", pos: "adj.", ipa: "/ɪnˈventɪv/", meaning: "有创意的；善于发明的", inText: "有创意的工程", collocation: "an inventive solution；inventive thinking", diff: "名词 invention/inventiveness。与 creative 近义，inventive 更偏“造出新东西”。" },
+        { lemma: "incredible", pos: "adj.", ipa: "/ɪnˈkredəbl/", meaning: "难以置信的；极好的", inText: "难以置信的规模", collocation: "an incredible story；incredibly", diff: "两义常混用：字面“不可信”，口语“极好”。副词 incredibly 在阅读里多为“极其”。" },
+        { lemma: "inevitable", pos: "adj.", ipa: "/ɪnˈevɪtəbl/", meaning: "不可避免的；必然的", inText: "在叙述里成了必然", collocation: "an inevitable consequence；it is inevitable that", diff: "副词 inevitably。写作里表示“必然结果”，比 certain 更强调“无法避免”。" },
+        { lemma: "controversial", pos: "adj.", ipa: "/ˌkɒntrəˈvɜːʃl/", meaning: "有争议的；引起争论的", inText: "被说成有争议的结果", collocation: "a controversial decision；highly controversial", diff: "名词 controversy。修饰人也可：a controversial figure。" },
+        { lemma: "galactic", pos: "adj.", ipa: "/ɡəˈlæktɪk/", meaning: "银河的；星系的", inText: "星系核心", collocation: "the galactic centre；a galactic scale", diff: "名词 galaxy。galactic 常作夸张修饰：on a galactic scale＝规模极其巨大。" },
+        { lemma: "intensive", pos: "adj.", ipa: "/ɪnˈtensɪv/", meaning: "密集的；深入的；集约的", inText: "深入的研究", collocation: "intensive care；intensive farming", diff: "与 intense（强烈的）区分：intensive 强调“密度高、投入集中”。" },
+        { lemma: "immense", pos: "adj.", ipa: "/ɪˈmens/", meaning: "巨大的；广大的", inText: "规模巨大", collocation: "immense pressure；of immense value", diff: "比 huge 正式。名词 immensity。常修饰 pressure、value、difficulty。" },
+        { lemma: "exceptional", pos: "adj.", ipa: "/ɪkˈsepʃənl/", meaning: "非凡的；例外的", inText: "非凡的耐心", collocation: "exceptional circumstances；an exceptional talent", diff: "两义：褒义“杰出的”和法律义“例外的”，看搭配判断。" },
+        { lemma: "harsh", pos: "adj.", ipa: "/hɑːʃ/", meaning: "严酷的；刺耳的；粗糙的", inText: "残酷的真相", collocation: "harsh conditions；harsh criticism", diff: "名词 harshness。the harsh truth＝残酷的事实，是议论文常用开头。" },
+        { lemma: "robust", pos: "adj.", ipa: "/rəʊˈbʌst/", meaning: "强健的；稳健的；经得起检验的", inText: "经得起重复的稳健结果", collocation: "robust evidence；a robust economy", diff: "学术里指“结论稳健”，经济里指“强劲”，都是褒义高频词。" },
+        { lemma: "irrational", pos: "adj.", ipa: "/ɪˈræʃənl/", meaning: "不理性的；不合逻辑的", inText: "被称作不理性的延误", collocation: "irrational behaviour；an irrational fear", diff: "反义 rational。行为经济学高频：irrational choices。" },
+        { lemma: "straightforward", pos: "adj.", ipa: "/ˌstreɪtˈfɔːwəd/", meaning: "直截了当的；简单的；坦率的", inText: "直白的语言", collocation: "a straightforward answer；fairly straightforward", diff: "既可指“简单易懂”，也可指“为人坦率”。" },
+        { lemma: "imminent", pos: "adj.", ipa: "/ˈɪmɪnənt/", meaning: "即将发生的；逼近的", inText: "结果“即将公布”了三年", collocation: "imminent danger；an imminent announcement", diff: "多用于“坏事或重大事件临近”。与 eminent（著名的）形近，别混。" },
+        { lemma: "chronic", pos: "adj.", ipa: "/ˈkrɒnɪk/", meaning: "慢性的；长期的；积习难改的", inText: "慢性问题", collocation: "chronic illness；chronic shortage", diff: "与 acute（急性的）成对。也可修饰社会问题：chronic unemployment。" },
+        { lemma: "colonial", pos: "adj.", ipa: "/kəˈləʊniəl/", meaning: "殖民的；殖民地的", inText: "殖民时期的地图绘制者", collocation: "colonial rule；colonial history", diff: "名词 colony/colonialism。历史、社会类阅读的高频批评用语。" },
+        { lemma: "ridiculous", pos: "adj.", ipa: "/rɪˈdɪkjələs/", meaning: "可笑的；荒谬的", inText: "对手的说法被称作可笑", collocation: "it is ridiculous that；look ridiculous", diff: "名词 ridicule。语气比 silly 重，常带“不值得认真对待”的贬义。" },
+        { lemma: "stunning", pos: "adj.", ipa: "/ˈstʌnɪŋ/", meaning: "惊艳的；令人震惊的", inText: "首张图像被称作惊艳", collocation: "a stunning image；stunning news", diff: "两义：视觉上“极美”，也可指“令人震惊的消息”，看语境。" },
+        { lemma: "indigenous", pos: "adj.", ipa: "/ɪnˈdɪdʒənəs/", meaning: "本土的；原住民的；土生土长的", inText: "原住民的知识", collocation: "indigenous peoples；indigenous to", diff: "indigenous to a region＝原产于某地。注意用 peoples 指“各民族”。" },
+        { lemma: "inherent", pos: "adj.", ipa: "/ɪnˈhɪərənt/", meaning: "固有的；内在的", inText: "语言里固有的偏见", collocation: "inherent in；an inherent risk", diff: "inherent in sth＝某事物本身固有的。与 intrinsic 近义。" },
+        { lemma: "imperative", pos: "adj./n.", ipa: "/ɪmˈperətɪv/", meaning: "至关重要的；必要的；n. 命令", inText: "保持朴素是必要的", collocation: "it is imperative that；a moral imperative", diff: "虚拟语气句型：it is imperative that he (should) go。名词义“必须做的事”。" },
+        { lemma: "compulsory", pos: "adj.", ipa: "/kəmˈpʌlsəri/", meaning: "强制的；义务的；必修的", inText: "成了强制规定", collocation: "compulsory education；a compulsory course", diff: "与 optional 相对；英式里 compulsory subject＝必修课。" },
+        { lemma: "irritated", pos: "adj.", ipa: "/ˈɪrɪteɪtɪd/", meaning: "恼怒的；被激怒的", inText: "市场团队对此很不高兴", collocation: "be irritated by / at；irritating", diff: "irritated（自己恼火）与 irritating（令人恼火）是六级常考的 -ed/-ing 对。" }
       ]
     }
   ]
