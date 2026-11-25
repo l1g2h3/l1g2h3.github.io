@@ -5,7 +5,7 @@
    ========================================================= */
 import * as THREE from 'three';
 import { OrbitControls } from './assets/vendor/OrbitControls.js';
-import { createRoom } from './room.js?v=bmwbxzpwp';
+import { createRoom } from './room.js?v=bmwvkxk2a';
 
 /* ---------------- 模块定义 ---------------- */
 const MODULES = [
@@ -50,6 +50,11 @@ const MODULES = [
     href: 'work/?m=course', status: 'soon'
   },
   {
+    id: 'study', title: '学习笔记', tag: '笔记',
+    desc: '扩散模型、机器人操作、注意力机制、模仿学习——学完之后整理下来的东西。',
+    href: 'notes/', status: 'live'
+  },
+  {
     id: 'notes', title: '读书笔记', tag: 'SOON',
     desc: '在读的书、划下来的句子、读完之后的几句话。还没开始，先把灯留着。',
     href: '', status: 'soon'
@@ -71,7 +76,7 @@ const PEDS = [
 ];
 
 const NS = MODULES.length;
-const RADIUS = 27;
+const RADIUS = 29;
 const START_HOUR = 16.2;
 
 /* ---------------- 小工具 ---------------- */
@@ -145,7 +150,7 @@ function boot() {
   const lampMats = [];
   const lampLights = [];
   const camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 0.1, 600);
-  camera.position.set(32, 30, 80);
+  camera.position.set(34, 32, 86);
 
   const controls = new OrbitControls(camera, renderer.domElement);
   controls.target.set(0, 8, 0);
@@ -627,9 +632,44 @@ function boot() {
     return g;
   }
 
+  function buildStudy() {
+    const g = new THREE.Group();
+    const mat = facadeMaterial({ base: '#d8c9ae', glass: '#465a5e', cols: 4, rows: 8, lit: 0.7, seed: 151 });
+    g.add(mesh(new THREE.BoxGeometry(8.6, 1.1, 8.6), stoneMat, 0, 0.55, 0));
+    g.add(mesh(new THREE.BoxGeometry(6.6, 12, 6.6), mat, 0, 7.1, 0));
+    g.add(mesh(new THREE.BoxGeometry(7, 0.4, 7), stoneDark, 0, 13.3, 0));
+
+    /* 楼层书脊带：四圈发光细带，像一排排书 */
+    const spineColors = ['#c98f5a', '#7f9c8a', '#8f7fa0', '#a8975c'];
+    spineColors.forEach((col, i) => {
+      const band = new THREE.Mesh(
+        new THREE.BoxGeometry(6.72, 0.34, 6.72),
+        new THREE.MeshStandardMaterial({ color: new THREE.Color(col), emissive: new THREE.Color(col), emissiveIntensity: 0.35, roughness: 0.7 })
+      );
+      band.position.y = 2.4 + i * 2.6;
+      emissiveParts.push({ mat: band.material, max: 1.4 });
+      g.add(band);
+    });
+
+    /* 屋顶采光亭 */
+    g.add(mesh(new THREE.CylinderGeometry(1.5, 1.9, 0.5, 8), stoneDark, 0, 13.7, 0));
+    const lantern = mesh(new THREE.CylinderGeometry(1.5, 1.5, 1.2, 8), glowMat('#ffe1b0', 0.9), 0, 14.4, 0, { cast: false });
+    emissiveParts.push({ mat: lantern.material, max: 2.2 });
+    g.add(lantern);
+    const cap = mesh(new THREE.ConeGeometry(2.0, 1.1, 8), stoneDark, 0, 15.4, 0);
+    g.add(cap);
+
+    /* 入口台阶与雨棚 */
+    g.add(mesh(new THREE.BoxGeometry(4.2, 0.24, 1.6), stoneMat, 0, 1.2, 4.4));
+    g.add(mesh(new THREE.BoxGeometry(1.4, 0.24, 0.5), stoneMat, 0, 0.5, 5.6));
+    g.add(mesh(new THREE.BoxGeometry(4.8, 0.2, 2.0), stoneDark, 0, 3.2, 4.6));
+    [-2, 2].forEach((x) => g.add(mesh(new THREE.CylinderGeometry(0.1, 0.1, 2.2, 8), metalMat, x, 2.1, 4.6)));
+    return g;
+  }
+
   const builders = {
     english: buildEnglish, modeling: buildModeling, neuro: buildNeuro,
-    ct: buildCT, surgery: buildSurgery, car: buildCar, lab: buildLab,
+    ct: buildCT, surgery: buildSurgery, car: buildCar, lab: buildLab, study: buildStudy,
     course: buildCourse, notes: buildNotes
   };
 
@@ -1035,7 +1075,7 @@ function boot() {
     mode = 'city';
     closeCard();
     hoveredHot = null;
-    camera.position.set(0, 23, 76);
+    camera.position.set(0, 25, 82);
     controls.target.set(0, 8, 0);
     controls.minDistance = 20;
     controls.maxDistance = 150;
@@ -1199,7 +1239,7 @@ function boot() {
   const tmpPed = new THREE.Vector3();
   let intro = 0;
   const introFrom = camera.position.clone();
-  const introTo = new THREE.Vector3(0, 23, 76);
+  const introTo = new THREE.Vector3(0, 25, 82);
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduced) intro = 1;
 
