@@ -28,6 +28,14 @@ const PROFILE = {
       foot: 'HTML · 无构建 · 数据存 GitHub Gist'
     },
     {
+      title: '学习笔记',
+      tag: '笔记',
+      tagKind: 'plain',
+      desc: '扩散模型、机器人操作、注意力机制、模仿学习——把学过的东西整理成能回看的笔记。',
+      href: '../notes/',
+      foot: '4 篇 · 持续更新'
+    },
+    {
       title: '数学建模竞赛',
       tag: '论文',
       tagKind: 'plain',
